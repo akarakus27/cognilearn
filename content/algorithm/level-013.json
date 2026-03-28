@@ -1,0 +1,1 @@
+{"id":"algorithm/level-013","skill_target":"sequences","difficulty":3,"learning_goal":"The winding road","expected_behavior":"Follow the only open path","grid":{"rows":4,"cols":5,"start":{"x":0,"y":0},"goal":{"x":4,"y":3},"obstacles":[{"x":2,"y":0},{"x":2,"y":1},{"x":2,"y":2}]},"solution":["DOWN","DOWN","DOWN","RIGHT","RIGHT","RIGHT","RIGHT","UP"]}

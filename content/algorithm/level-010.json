@@ -1,0 +1,1 @@
+{"id":"algorithm/level-010","skill_target":"sequences","difficulty":2,"learning_goal":"Dodge the wall and reach the star","expected_behavior":"Go around the obstacle","grid":{"rows":3,"cols":4,"start":{"x":0,"y":0},"goal":{"x":3,"y":0},"obstacles":[{"x":1,"y":0},{"x":2,"y":0}]},"solution":["DOWN","RIGHT","RIGHT","RIGHT","UP"]}

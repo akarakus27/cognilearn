@@ -1,0 +1,1 @@
+{"id":"algorithm/level-102","mode":"sequence","skill_target":"sequences","difficulty":2,"learning_goal":"Go around the wall","expected_behavior":"The direct path is blocked!","grid":{"rows":3,"cols":4,"start":{"x":0,"y":1},"goal":{"x":3,"y":1},"obstacles":[{"x":2,"y":1}]},"solution":["RIGHT","DOWN","RIGHT","UP","RIGHT"]}

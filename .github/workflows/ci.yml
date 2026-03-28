@@ -1,0 +1,41 @@
+name: CI
+
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+    branches: [main, master]
+
+jobs:
+  test-and-build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 9
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "pnpm"
+
+      - name: Install
+        run: pnpm install
+
+      - name: Test packages
+        run: |
+          pnpm test:engine
+          pnpm test:utils
+
+      - name: Build web
+        run: pnpm --filter web build
+
+      - name: Install Playwright (Chromium)
+        run: pnpm --filter web exec playwright install --with-deps chromium
+
+      - name: E2E smoke
+        run: pnpm --filter web exec playwright test
+        env:
+          CI: "true"

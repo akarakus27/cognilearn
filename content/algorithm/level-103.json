@@ -1,0 +1,1 @@
+{"id":"algorithm/level-103","mode":"sequence","skill_target":"sequences","difficulty":3,"learning_goal":"Detour ahead!","expected_behavior":"Find the path around two walls","grid":{"rows":4,"cols":4,"start":{"x":0,"y":0},"goal":{"x":3,"y":3},"obstacles":[{"x":1,"y":1},{"x":2,"y":2}]},"solution":["RIGHT","DOWN","RIGHT","DOWN","RIGHT","DOWN"]}

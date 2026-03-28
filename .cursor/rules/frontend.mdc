@@ -1,0 +1,24 @@
+---
+description: Frontend rules — component isolation, no game logic in UI
+globs: apps/web/**/*.tsx
+alwaysApply: false
+---
+
+# Frontend Rules
+
+## Constraints
+
+- **No game logic in UI** — UI displays and forwards input. Engine computes.
+- **Component isolation** — Each component has a single responsibility.
+- **Game canvas** — Thin adapter to engine; renders state, captures input.
+
+## Structure
+
+- `apps/web/app/` — App Router pages
+- `apps/web/components/` — Shared components
+- `apps/web/components/game/` — Game canvas layer
+
+## State
+
+- Use Zustand or React Context for session state.
+- Never compute level validity in frontend — delegate to engine.

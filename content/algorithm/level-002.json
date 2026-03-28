@@ -1,0 +1,15 @@
+{
+  "id": "algorithm/level-002",
+  "mode": "sequence",
+  "skill_target": "sequences",
+  "difficulty": 2,
+  "learning_goal": "Plan your moves first, then run!",
+  "expected_behavior": "Add commands in order, then press Run",
+  "grid": {
+    "rows": 3,
+    "cols": 4,
+    "start": { "x": 0, "y": 0 },
+    "goal": { "x": 3, "y": 2 }
+  },
+  "solution": ["RIGHT", "RIGHT", "RIGHT", "DOWN", "DOWN"]
+}

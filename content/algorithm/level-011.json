@@ -1,0 +1,1 @@
+{"id":"algorithm/level-011","skill_target":"sequences","difficulty":2,"learning_goal":"Find the shortcut path","expected_behavior":"Use RIGHT and DOWN smartly","grid":{"rows":4,"cols":4,"start":{"x":0,"y":0},"goal":{"x":2,"y":3}},"solution":["RIGHT","RIGHT","DOWN","DOWN","DOWN"]}

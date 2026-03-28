@@ -1,0 +1,25 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(pnpm install:*)",
+      "Bash(cd /c/Users/Abdul/Desktop/Yeni klasör \\\\\\(2\\\\\\))",
+      "Bash(cat \"/c/Users/Abdul/Desktop/Yeni klasör \\(2\\)/apps/web/app/page.tsx\")",
+      "Bash(cat \"/c/Users/Abdul/Desktop/Yeni klasör \\(2\\)/apps/web/app/world/[id]/page.tsx\")",
+      "Bash(cat \"/c/Users/Abdul/Desktop/Yeni klasör \\(2\\)/apps/web/app/layout.tsx\")",
+      "Bash(cat \"/c/Users/Abdul/Desktop/Yeni klasör \\(2\\)/apps/web/app/globals.css\")",
+      "Bash(cat \"/c/Users/Abdul/Desktop/Yeni klasör \\(2\\)/apps/web/components/world/WorldMap.tsx\")",
+      "Bash(cat \"/c/Users/Abdul/Desktop/Yeni klasör \\(2\\)/apps/web/lib/content-loader.ts\")",
+      "Bash(cat \"/c/Users/Abdul/Desktop/Yeni klasör \\(2\\)/apps/web/package.json\")",
+      "Bash(ls \"/c/Users/Abdul/Desktop/Yeni klasör \\(2\\)/apps/web/public/\")",
+      "Bash(cat \"/c/Users/Abdul/Desktop/Yeni klasör \\(2\\)/apps/web/scripts/copy-content.mjs\")",
+      "Read(//c/Users/Abdul/AppData/Local/Programs/Eclipse Adoptium//**)",
+      "Bash(\"/c/Users/Abdul/AppData/Local/Programs/Eclipse Adoptium/jdk-25.0.1.8-hotspot/bin/node\" --version)",
+      "Bash(\"/c/Program Files/nodejs/node.exe\" \"/c/Users/Abdul/Desktop/Yeni klasör \\(2\\)/apps/web/scripts/copy-content.mjs\")",
+      "Bash(find \"/c/Users/Abdul/Desktop/Yeni klasör \\(2\\)/apps/web/public\" -type f)",
+      "Bash(cat \"/c/Users/Abdul/Desktop/Yeni klasör \\(2\\)/content/algorithm/level-002.json\")",
+      "Bash(cat \"/c/Users/Abdul/Desktop/Yeni klasör \\(2\\)/packages/game-engine/src/command.ts\")",
+      "Bash(cat \"/c/Users/Abdul/Desktop/Yeni klasör \\(2\\)/apps/web/next.config.js\")",
+      "Bash(ls \"/c/Users/Abdul/Desktop/Yeni klasör \\(2\\)/apps/web/node_modules/tailwindcss\")"
+    ]
+  }
+}

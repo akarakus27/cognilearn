@@ -1,0 +1,26 @@
+---
+description: Game engine constraints — framework-agnostic, pure logic
+globs: packages/game-engine/**/*.ts
+alwaysApply: false
+---
+
+# Game Engine Rules
+
+## Constraints
+
+- **No UI imports** — Engine must not import React, Next.js, or DOM.
+- **Pure logic** — Grid, Command Execution, Validator, Reward, State Machine are pure.
+- **Testable** — Every public function must be unit-testable.
+
+## Structure
+
+- `packages/game-engine/src/` — Core engines
+- `packages/game-engine/src/grid.ts` — Grid Engine
+- `packages/game-engine/src/command.ts` — Command Execution Engine
+- `packages/game-engine/src/validator.ts` — Puzzle Validator
+- `packages/game-engine/src/reward.ts` — Reward Engine
+- `packages/game-engine/src/state-machine.ts` — Level State Machine
+
+## Contract
+
+Engine exposes: `loadLevel(levelId)`, `executeAction(action)`, `getState()`. Never depends on UI.

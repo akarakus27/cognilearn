@@ -1,0 +1,1 @@
+{"id":"algorithm/level-012","skill_target":"sequences","difficulty":3,"learning_goal":"Navigate the zigzag path","expected_behavior":"Mix directions carefully","grid":{"rows":4,"cols":4,"start":{"x":0,"y":0},"goal":{"x":3,"y":2},"obstacles":[{"x":1,"y":1},{"x":2,"y":1}]},"solution":["RIGHT","DOWN","DOWN","RIGHT","RIGHT","UP"]}

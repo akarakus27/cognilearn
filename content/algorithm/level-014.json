@@ -1,0 +1,1 @@
+{"id":"algorithm/level-014","skill_target":"sequences","difficulty":3,"learning_goal":"Two obstacles in your way","expected_behavior":"Weave through the blocks","grid":{"rows":4,"cols":5,"start":{"x":0,"y":1},"goal":{"x":4,"y":1},"obstacles":[{"x":1,"y":1},{"x":3,"y":1}]},"solution":["DOWN","RIGHT","RIGHT","UP","RIGHT","DOWN","RIGHT"]}

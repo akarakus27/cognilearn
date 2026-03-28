@@ -1,0 +1,25 @@
+---
+description: Core workflow — Plan → Agent review → Small implementation → Validate → Commit
+alwaysApply: true
+---
+
+# Cognitive Platform — Core Workflow
+
+## Developer Loop
+
+1. **Plan** — Define task scope before coding. No random feature addition.
+2. **Agent Review** — For architectural changes, reference `@docs/` or `@agents/`.
+3. **Small Implementation** — One file or one feature at a time.
+4. **Validate** — Run tests or manual check.
+5. **Commit** — Small, atomic commits with clear messages.
+
+## Anti-Patterns
+
+- No vibe coding
+- No large uncontrolled code generation
+- No premature optimization
+- No feature jumping
+
+## Before Large Changes
+
+If adding a new feature, first ask: "Does this fit the architecture?" Reference `docs/phase-2-system-architecture.md`.

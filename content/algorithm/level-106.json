@@ -1,0 +1,1 @@
+{"id":"algorithm/level-106","mode":"sequence","skill_target":"sequences","difficulty":3,"learning_goal":"U-turn tunnel","expected_behavior":"Go around the long wall","grid":{"rows":4,"cols":5,"start":{"x":0,"y":0},"goal":{"x":0,"y":3},"obstacles":[{"x":1,"y":0},{"x":1,"y":1},{"x":1,"y":2}]},"solution":["DOWN","DOWN","DOWN"]}

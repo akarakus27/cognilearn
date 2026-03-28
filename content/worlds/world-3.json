@@ -1,0 +1,40 @@
+{
+  "id": "world-3",
+  "name": "Chess Kingdom",
+  "description": "Learn chess from zero — piece by piece!",
+  "levels": [],
+  "routePrefix": "chess",
+  "chapters": [
+    {
+      "id": "chapter-1",
+      "title": "Meet the Pieces",
+      "icon": "👑",
+      "description": "Get to know every chess piece",
+      "levels": ["chess/l1p1","chess/l1p2","chess/l1p3","chess/l1p4","chess/l1p5","chess/l1p6"],
+      "levelTitles": {
+        "chess/l1p1": "The Pawn",
+        "chess/l1p2": "The Rook",
+        "chess/l1p3": "The Knight",
+        "chess/l1p4": "The Bishop",
+        "chess/l1p5": "The Queen",
+        "chess/l1p6": "The King"
+      }
+    },
+    {
+      "id": "chapter-2",
+      "title": "Basic Moves",
+      "icon": "⚡",
+      "description": "See how each piece moves with animation",
+      "levels": ["chess/l2p1","chess/l2p2","chess/l2p3","chess/l2p4","chess/l2p5","chess/l2p6"],
+      "levelTitles": {
+        "chess/l2p1": "Pawn Moves",
+        "chess/l2p2": "Rook Moves",
+        "chess/l2p3": "Knight Jumps",
+        "chess/l2p4": "Bishop Slides",
+        "chess/l2p5": "Queen Rules",
+        "chess/l2p6": "King Steps"
+      }
+    }
+  ],
+  "order": 3
+}

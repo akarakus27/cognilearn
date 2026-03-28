@@ -1,0 +1,1 @@
+{"id":"algorithm/level-017","skill_target":"sequences","difficulty":4,"learning_goal":"Obstacle course champion","expected_behavior":"Avoid all 4 blocks","grid":{"rows":5,"cols":5,"start":{"x":0,"y":2},"goal":{"x":4,"y":2},"obstacles":[{"x":1,"y":1},{"x":1,"y":3},{"x":3,"y":1},{"x":3,"y":3}]},"solution":["RIGHT","RIGHT","RIGHT","RIGHT"]}

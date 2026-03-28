@@ -1,0 +1,1 @@
+{"id":"algorithm/level-101","mode":"sequence","skill_target":"sequences","difficulty":2,"learning_goal":"Step by step to the star","expected_behavior":"Plan 3 moves then run","grid":{"rows":3,"cols":3,"start":{"x":0,"y":0},"goal":{"x":2,"y":2}},"solution":["RIGHT","RIGHT","DOWN","DOWN"]}

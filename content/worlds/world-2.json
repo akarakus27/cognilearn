@@ -1,0 +1,40 @@
+{
+  "id": "world-2",
+  "name": "Algorithm Builder",
+  "description": "Write your program first, then watch it run!",
+  "levels": [
+    "algorithm/level-002",
+    "algorithm/level-101",
+    "algorithm/level-102",
+    "algorithm/level-103",
+    "algorithm/level-006",
+    "algorithm/level-104",
+    "algorithm/level-105",
+    "algorithm/level-106",
+    "algorithm/level-007",
+    "algorithm/level-107",
+    "algorithm/level-108",
+    "algorithm/level-109",
+    "algorithm/level-110",
+    "algorithm/level-111",
+    "algorithm/level-112"
+  ],
+  "levelTitles": {
+    "algorithm/level-002": "Plan & Run",
+    "algorithm/level-101": "Baby Steps",
+    "algorithm/level-102": "First Wall",
+    "algorithm/level-103": "Detour Ahead",
+    "algorithm/level-006": "The Long Road",
+    "algorithm/level-104": "Vertical Wall",
+    "algorithm/level-105": "Snake Path",
+    "algorithm/level-106": "U-Turn Tunnel",
+    "algorithm/level-007": "Maze Runner",
+    "algorithm/level-107": "Double Detour",
+    "algorithm/level-108": "The Corridor",
+    "algorithm/level-109": "Island Hopping",
+    "algorithm/level-110": "The Long Way",
+    "algorithm/level-111": "Big Maze",
+    "algorithm/level-112": "Algorithm Master! 🏆"
+  },
+  "order": 2
+}

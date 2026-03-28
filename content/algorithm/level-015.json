@@ -1,0 +1,1 @@
+{"id":"algorithm/level-015","skill_target":"sequences","difficulty":3,"learning_goal":"Corner to corner","expected_behavior":"Go right then all the way down","grid":{"rows":5,"cols":5,"start":{"x":0,"y":0},"goal":{"x":4,"y":4}},"solution":["RIGHT","RIGHT","RIGHT","RIGHT","DOWN","DOWN","DOWN","DOWN"]}

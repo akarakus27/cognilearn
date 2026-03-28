@@ -1,0 +1,59 @@
+@import "tailwindcss";
+
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap");
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: "Nunito", system-ui, -apple-system, sans-serif;
+  line-height: 1.5;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-12px); }
+}
+@keyframes floatSlow {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-8px) rotate(5deg); }
+}
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(139, 92, 246, 0.4); }
+  50% { box-shadow: 0 0 0 12px rgba(139, 92, 246, 0); }
+}
+
+.animate-float { animation: float 3s ease-in-out infinite; }
+.animate-float-slow { animation: floatSlow 4s ease-in-out infinite; }
+.animate-float-delay { animation: float 3.5s ease-in-out infinite 0.8s; }
+.animate-pulse-glow { animation: pulse-glow 2s ease-in-out infinite; }
+
+.app-shell {
+  min-height: 100vh;
+}
+
+@keyframes successPop {
+  0% {
+    transform: scale(0.6);
+    opacity: 0;
+  }
+  70% {
+    transform: scale(1.08);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.success-feedback .success-pop {
+  animation: successPop 0.45s ease-out;
+}

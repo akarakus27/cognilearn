@@ -1,0 +1,40 @@
+{
+  "id": "world-1",
+  "name": "First Steps",
+  "description": "Learn to move one step at a time",
+  "levels": [
+    "algorithm/level-001",
+    "algorithm/level-008",
+    "algorithm/level-009",
+    "algorithm/level-003",
+    "algorithm/level-010",
+    "algorithm/level-011",
+    "algorithm/level-004",
+    "algorithm/level-012",
+    "algorithm/level-013",
+    "algorithm/level-005",
+    "algorithm/level-014",
+    "algorithm/level-015",
+    "algorithm/level-016",
+    "algorithm/level-017",
+    "algorithm/level-018"
+  ],
+  "levelTitles": {
+    "algorithm/level-001": "Your First Move",
+    "algorithm/level-008": "Going Down",
+    "algorithm/level-009": "Turn the Corner",
+    "algorithm/level-003": "Around the Block",
+    "algorithm/level-010": "Wall Dodge",
+    "algorithm/level-011": "Shortcut",
+    "algorithm/level-004": "Diagonal Journey",
+    "algorithm/level-012": "Zigzag",
+    "algorithm/level-013": "Winding Road",
+    "algorithm/level-005": "Double Trouble",
+    "algorithm/level-014": "Weave Through",
+    "algorithm/level-015": "Corner to Corner",
+    "algorithm/level-016": "Tricky Maze",
+    "algorithm/level-017": "Obstacle Course",
+    "algorithm/level-018": "Final Challenge!"
+  },
+  "order": 1
+}

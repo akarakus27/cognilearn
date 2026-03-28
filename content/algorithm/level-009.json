@@ -1,0 +1,1 @@
+{"id":"algorithm/level-009","skill_target":"sequences","difficulty":2,"learning_goal":"Go right then down","expected_behavior":"Move RIGHT then DOWN","grid":{"rows":3,"cols":3,"start":{"x":0,"y":0},"goal":{"x":2,"y":1}},"solution":["RIGHT","RIGHT","DOWN"]}

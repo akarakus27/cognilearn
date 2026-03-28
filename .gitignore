@@ -1,0 +1,19 @@
+node_modules
+.next
+out
+dist
+.turbo
+*.log
+.env
+.env.*
+.DS_Store
+coverage
+.vercel
+
+# Generated from repo root content/
+apps/web/public/content/
+
+# Playwright
+test-results/
+playwright-report/
+playwright/.cache/

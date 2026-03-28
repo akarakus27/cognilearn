@@ -1,0 +1,24 @@
+---
+description: Content rules — JSON levels must follow schema
+globs: content/**/*.json
+alwaysApply: false
+---
+
+# Content Rules
+
+## Structure
+
+- `content/worlds/` — World metadata, level lists
+- `content/algorithm/` — Algorithmic thinking levels
+- `content/chess/` — Chess levels
+- `content/unplugged/` — Unplugged coding levels
+
+## Rules
+
+- Every level must conform to `@cognitive/content-schema` LevelSchema.
+- No logic in JSON — only data (config, puzzle state, solution).
+- Use semantic IDs: `algorithm/level-001`, `chess/level-010`.
+
+## Level Fields (minimal)
+
+Each level defines: `skill_target`, `difficulty`, `learning_goal`, `expected_behavior`.

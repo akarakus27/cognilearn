@@ -1,0 +1,16 @@
+{
+  "id": "algorithm/level-006",
+  "mode": "sequence",
+  "skill_target": "sequences",
+  "difficulty": 3,
+  "learning_goal": "Write the full program to reach the star",
+  "expected_behavior": "Add all commands in order, then press Run",
+  "grid": {
+    "rows": 4,
+    "cols": 5,
+    "start": { "x": 0, "y": 0 },
+    "goal": { "x": 4, "y": 3 },
+    "obstacles": [{ "x": 2, "y": 1 }]
+  },
+  "solution": ["RIGHT", "DOWN", "RIGHT", "DOWN", "RIGHT", "DOWN", "RIGHT"]
+}

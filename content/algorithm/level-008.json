@@ -1,0 +1,1 @@
+{"id":"algorithm/level-008","skill_target":"sequences","difficulty":1,"learning_goal":"Move down to the goal","expected_behavior":"Use DOWN twice","grid":{"rows":3,"cols":2,"start":{"x":0,"y":0},"goal":{"x":0,"y":2}},"solution":["DOWN","DOWN"]}

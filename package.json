@@ -1,0 +1,16 @@
+{
+  "name": "cognitive-platform",
+  "private": true,
+  "scripts": {
+    "dev": "pnpm --filter web dev",
+    "build": "pnpm -r build",
+    "build:web": "pnpm --filter web build",
+    "test": "pnpm -r test",
+    "test:all": "pnpm test:engine && pnpm test:utils",
+    "test:engine": "pnpm --filter @cognitive/game-engine test",
+    "test:utils": "pnpm --filter @cognitive/utils test",
+    "ci": "pnpm test:all && pnpm build:web",
+    "test:e2e": "pnpm --filter web test:e2e"
+  },
+  "packageManager": "pnpm@9.0.0"
+}

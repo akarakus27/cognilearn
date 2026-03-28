@@ -1,0 +1,1 @@
+{"id":"algorithm/level-016","skill_target":"sequences","difficulty":4,"learning_goal":"The tricky maze","expected_behavior":"Find the one true path","grid":{"rows":4,"cols":5,"start":{"x":0,"y":0},"goal":{"x":4,"y":2},"obstacles":[{"x":1,"y":0},{"x":1,"y":2},{"x":3,"y":1},{"x":3,"y":3}]},"solution":["DOWN","RIGHT","RIGHT","UP","RIGHT","DOWN","RIGHT"]}

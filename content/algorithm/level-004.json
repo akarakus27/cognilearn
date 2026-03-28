@@ -1,0 +1,14 @@
+{
+  "id": "algorithm/level-004",
+  "skill_target": "sequences",
+  "difficulty": 2,
+  "learning_goal": "Find the path to the goal",
+  "expected_behavior": "Use RIGHT and DOWN commands",
+  "grid": {
+    "rows": 4,
+    "cols": 4,
+    "start": { "x": 0, "y": 0 },
+    "goal": { "x": 3, "y": 3 }
+  },
+  "solution": ["RIGHT", "RIGHT", "RIGHT", "DOWN", "DOWN", "DOWN"]
+}

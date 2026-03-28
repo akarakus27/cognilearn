@@ -1,0 +1,21 @@
+{
+  "id": "algorithm/level-007",
+  "mode": "sequence",
+  "skill_target": "sequences",
+  "difficulty": 4,
+  "learning_goal": "Find the way through the maze!",
+  "expected_behavior": "Plan every move carefully before running",
+  "grid": {
+    "rows": 4,
+    "cols": 5,
+    "start": { "x": 0, "y": 0 },
+    "goal": { "x": 4, "y": 3 },
+    "obstacles": [
+      { "x": 1, "y": 0 },
+      { "x": 1, "y": 2 },
+      { "x": 3, "y": 1 },
+      { "x": 3, "y": 3 }
+    ]
+  },
+  "solution": ["DOWN", "DOWN", "RIGHT", "RIGHT", "UP", "RIGHT", "DOWN", "RIGHT", "DOWN", "DOWN"]
+}

@@ -22,17 +22,32 @@
     },
     {
       "id": "chapter-2",
-      "title": "Basic Moves",
+      "title": "Temel Hamleler",
       "icon": "⚡",
-      "description": "See how each piece moves with animation",
+      "description": "Her taşın nasıl hareket ettiğini animasyonla gör",
       "levels": ["chess/l2p1","chess/l2p2","chess/l2p3","chess/l2p4","chess/l2p5","chess/l2p6"],
       "levelTitles": {
-        "chess/l2p1": "Pawn Moves",
-        "chess/l2p2": "Rook Moves",
-        "chess/l2p3": "Knight Jumps",
-        "chess/l2p4": "Bishop Slides",
-        "chess/l2p5": "Queen Rules",
-        "chess/l2p6": "King Steps"
+        "chess/l2p1": "Piyon Hamlesi",
+        "chess/l2p2": "Kale Hamlesi",
+        "chess/l2p3": "At Sıçraması",
+        "chess/l2p4": "Fil Hamlesi",
+        "chess/l2p5": "Vezir Kuralları",
+        "chess/l2p6": "Şah Adımları"
+      }
+    },
+    {
+      "id": "chapter-3",
+      "title": "Simülasyon",
+      "icon": "🎮",
+      "description": "Taşları kendin hareket ettir — hedefe ulaş!",
+      "levels": ["chess/l3p1","chess/l3p2","chess/l3p3","chess/l3p4","chess/l3p5","chess/l3p6"],
+      "levelTitles": {
+        "chess/l3p1": "Piyonu Oyna",
+        "chess/l3p2": "Kaleyi Oyna",
+        "chess/l3p3": "Atı Oyna",
+        "chess/l3p4": "Fili Oyna",
+        "chess/l3p5": "Veziri Oyna",
+        "chess/l3p6": "Şahı Oyna"
       }
     }
   ],

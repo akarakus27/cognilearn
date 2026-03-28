@@ -7,6 +7,7 @@ import { fetchLevel, fetchWorld } from "@/lib/content-loader";
 import type { LevelSchema } from "@cognitive/content-schema";
 import { ChessLessonCanvas } from "@/components/chess/ChessLessonCanvas";
 import { ChessMovesCanvas } from "@/components/chess/ChessMovesCanvas";
+import { ChessSimulateCanvas } from "@/components/chess/ChessSimulateCanvas";
 
 function slugToChessId(slug: string): string {
   // chess-l1p1 → chess/l1p1
@@ -99,6 +100,9 @@ export default function ChessPage({ params }: { params: { id: string } }) {
         )}
         {level.mode === "chess-moves" && (
           <ChessMovesCanvas level={level} nextHref={nextHref} worldHref={worldHref} />
+        )}
+        {level.mode === "chess-simulate" && (
+          <ChessSimulateCanvas level={level} nextHref={nextHref} worldHref={worldHref} />
         )}
       </div>
     </div>

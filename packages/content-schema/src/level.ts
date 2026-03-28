@@ -6,7 +6,7 @@ export interface LevelSchema {
   learning_goal: string;
   expected_behavior: string;
   /** "step" = move one at a time (default), "sequence" = build queue then run, "chess-lesson" = chess theory, "chess-moves" = chess practice */
-  mode?: "step" | "sequence" | "chess-lesson" | "chess-moves";
+  mode?: "step" | "sequence" | "chess-lesson" | "chess-moves" | "chess-simulate";
   /** Grid config for algorithmic/unplugged puzzles */
   grid?: {
     rows: number;

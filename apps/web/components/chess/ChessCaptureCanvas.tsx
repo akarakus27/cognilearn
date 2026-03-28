@@ -25,7 +25,7 @@ const CELL = 64;
 
 export function ChessCaptureCanvas({ level, nextHref, worldHref }: Props) {
   const router = useRouter();
-  const meta = level.meta as CaptureMeta;
+  const meta = level.meta as unknown as CaptureMeta;
   const { piece, boardSize, task } = meta;
   const pieceInfo = PIECE_DATA[piece];
 

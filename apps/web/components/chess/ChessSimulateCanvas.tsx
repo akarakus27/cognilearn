@@ -71,7 +71,7 @@ function getValidMoves(piece: PieceName, pos: Pos, boardSize: number): Pos[] {
 
 export function ChessSimulateCanvas({ level, nextHref, worldHref }: Props) {
   const router = useRouter();
-  const piece = (level.meta as { piece: PieceName }).piece;
+  const piece = (level.meta as unknown as { piece: PieceName }).piece;
   const pieceInfo = PIECE_DATA[piece];
   const moveInfo = MOVE_DATA[piece];
   const boardSize = moveInfo.boardSize;

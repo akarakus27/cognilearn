@@ -65,7 +65,7 @@ export function ChessLessonCanvas({ level, nextHref, worldHref }: Props) {
   const router = useRouter();
   const [done, setDone] = useState(false);
 
-  const piece = (level.meta as { piece: PieceName }).piece;
+  const piece = (level.meta as unknown as { piece: PieceName }).piece;
   const data = PIECE_DATA[piece];
 
   const handleComplete = () => {

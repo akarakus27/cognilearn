@@ -16,7 +16,7 @@ const CELL = 52;
 
 export function ChessMovesCanvas({ level, nextHref, worldHref }: Props) {
   const router = useRouter();
-  const piece = (level.meta as { piece: PieceName }).piece;
+  const piece = (level.meta as unknown as { piece: PieceName }).piece;
   const pieceInfo = PIECE_DATA[piece];
   const moveInfo = MOVE_DATA[piece];
 

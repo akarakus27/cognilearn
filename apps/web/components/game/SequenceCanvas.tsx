@@ -8,10 +8,10 @@ import { SuccessFeedback } from "./SuccessFeedback";
 import { FailFeedback } from "./FailFeedback";
 
 const ARROW: Record<GridCommand, string> = {
-  UP: "↑",
-  DOWN: "↓",
-  LEFT: "←",
-  RIGHT: "→",
+  UP: "⬆️",
+  DOWN: "⬇️",
+  LEFT: "⬅️",
+  RIGHT: "➡️",
 };
 
 const DELTA: Record<GridCommand, { dx: number; dy: number }> = {
@@ -267,7 +267,7 @@ export function SequenceCanvas({
       >
         {queue.length === 0 ? (
           <span style={{ color: "#94a3b8", fontSize: 14, fontWeight: 600 }}>
-            Add commands above…
+            Komut ekle...
           </span>
         ) : (
           queue.map((cmd, i) => (
@@ -301,7 +301,7 @@ export function SequenceCanvas({
       {/* Step counter while playing */}
       {isPlaying && activeStep !== null && (
         <div style={{ textAlign: "center", marginBottom: "0.75rem", fontWeight: 700, color: "#7c3aed", fontSize: 14 }}>
-          Step {activeStep + 1} of {queue.length}
+          Adım {activeStep + 1} / {queue.length}
         </div>
       )}
 
@@ -319,7 +319,7 @@ export function SequenceCanvas({
               minHeight: "44px",
             }}
           >
-            ⏹ Stop
+            ⏹ Durdur
           </button>
         ) : (
           <>
@@ -338,7 +338,7 @@ export function SequenceCanvas({
                 boxShadow: queue.length === 0 ? "none" : "0 4px 12px rgba(22,163,74,0.35)",
               }}
             >
-              ▶ Run
+              ▶ Çalıştır
             </button>
             <button
               type="button"
@@ -353,7 +353,7 @@ export function SequenceCanvas({
                 color: queue.length === 0 ? "#94a3b8" : "#374151",
               }}
             >
-              ⌫ Undo
+              ⌫ Geri Al
             </button>
             <button
               type="button"
@@ -368,7 +368,7 @@ export function SequenceCanvas({
                 color: queue.length === 0 ? "#94a3b8" : "#374151",
               }}
             >
-              Clear
+              Temizle
             </button>
           </>
         )}

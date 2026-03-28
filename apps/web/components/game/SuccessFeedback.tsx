@@ -11,12 +11,7 @@ interface SuccessFeedbackProps {
   worldHref: string;
 }
 
-export function SuccessFeedback({
-  stars,
-  xp,
-  nextLevelHref,
-  worldHref,
-}: SuccessFeedbackProps) {
+export function SuccessFeedback({ stars, xp, nextLevelHref, worldHref }: SuccessFeedbackProps) {
   const router = useRouter();
 
   useEffect(() => {
@@ -29,56 +24,66 @@ export function SuccessFeedback({
     return () => window.removeEventListener("keydown", onKey);
   }, [nextLevelHref, worldHref, router]);
 
+  const starDisplay = ["⭐", "⭐⭐", "⭐⭐⭐"][stars - 1];
+
   return (
-    <div className="success-feedback" style={{ textAlign: "center", padding: "1rem" }}>
-      <div
-        className="success-pop"
-        style={{
-          fontSize: "clamp(2rem, 8vw, 3rem)",
-          marginBottom: "0.5rem",
-        }}
-      >
-        ★
+    <div className="success-feedback" style={{
+      textAlign: "center",
+      padding: "2rem 1rem",
+      fontFamily: "Nunito, system-ui, sans-serif",
+    }}>
+      {/* Animated star */}
+      <div className="success-pop" style={{ fontSize: 72, marginBottom: "0.75rem", lineHeight: 1 }}>
+        🏆
       </div>
-      <h2 style={{ color: "#15803d", marginBottom: "0.25rem" }}>Great job!</h2>
-      <p style={{ fontSize: "1.25rem", marginBottom: "0.5rem" }}>
-        {"★".repeat(stars)} <span style={{ color: "#666", fontSize: "0.95rem" }}>({stars} stars)</span>
+
+      <h2 style={{
+        color: "#15803d", fontSize: "clamp(1.4rem, 4vw, 1.8rem)",
+        fontWeight: 900, marginBottom: "0.5rem",
+      }}>
+        Harika! Tebrikler! 🎉
+      </h2>
+
+      {/* Stars */}
+      <div style={{ fontSize: 36, marginBottom: "0.5rem" }}>{starDisplay}</div>
+      <p style={{ fontSize: 14, color: "#64748b", marginBottom: "0.25rem" }}>
+        {stars} yıldız kazandın!
       </p>
-      <p style={{ color: "#666", marginBottom: "1rem" }}>+{xp} XP</p>
-      <div style={{ display: "flex", flexWrap: "wrap", gap: "0.5rem", justifyContent: "center" }}>
+
+      {/* XP */}
+      <div style={{
+        display: "inline-flex", alignItems: "center", gap: "0.4rem",
+        background: "linear-gradient(135deg, #fef3c7, #fde68a)",
+        border: "2px solid #f59e0b",
+        borderRadius: "2rem", padding: "0.4rem 1.25rem",
+        fontSize: 16, fontWeight: 800, color: "#92400e",
+        marginBottom: "2rem",
+      }}>
+        ⚡ +{xp} XP
+      </div>
+
+      {/* Buttons */}
+      <div style={{ display: "flex", flexWrap: "wrap", gap: "0.75rem", justifyContent: "center" }}>
         {nextLevelHref && (
-          <Link
-            href={nextLevelHref}
-            style={{
-              display: "inline-block",
-              padding: "0.65rem 1.25rem",
-              background: "#2563eb",
-              color: "white",
-              borderRadius: "0.5rem",
-              textDecoration: "none",
-              fontWeight: 600,
-              minHeight: "44px",
-              lineHeight: 1.2,
-            }}
-          >
-            Next level
+          <Link href={nextLevelHref} style={{
+            display: "inline-flex", alignItems: "center", gap: "0.4rem",
+            padding: "0.875rem 2rem",
+            background: "linear-gradient(135deg, #7c3aed, #4f46e5)",
+            color: "white", borderRadius: "1rem",
+            textDecoration: "none", fontWeight: 800, fontSize: 16,
+            boxShadow: "0 4px 14px rgba(124,58,237,0.4)",
+          }}>
+            Sonraki Bölüm →
           </Link>
         )}
-        <Link
-          href={worldHref}
-          style={{
-            display: "inline-block",
-            padding: "0.65rem 1.25rem",
-            background: "#f3f4f6",
-            color: "#111827",
-            borderRadius: "0.5rem",
-            textDecoration: "none",
-            fontWeight: 600,
-            minHeight: "44px",
-            lineHeight: 1.2,
-          }}
-        >
-          World map
+        <Link href={worldHref} style={{
+          display: "inline-flex", alignItems: "center", gap: "0.4rem",
+          padding: "0.875rem 1.5rem",
+          background: "white", border: "2px solid #e2e8f0",
+          color: "#475569", borderRadius: "1rem",
+          textDecoration: "none", fontWeight: 700, fontSize: 15,
+        }}>
+          🗺️ Dünya Haritası
         </Link>
       </div>
     </div>

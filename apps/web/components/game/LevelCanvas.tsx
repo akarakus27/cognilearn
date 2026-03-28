@@ -24,8 +24,9 @@ function DPadBtn({ label, onClick }: { label: string; onClick: () => void }) {
         boxShadow: "0 2px 6px rgba(0,0,0,0.08)",
         transition: "transform 0.1s, box-shadow 0.1s",
       }}
-      onMouseDown={(e) => { (e.currentTarget as HTMLButtonElement).style.transform = "scale(0.92)"; }}
-      onMouseUp={(e) => { (e.currentTarget as HTMLButtonElement).style.transform = "scale(1)"; }}
+      onPointerDown={(e) => { (e.currentTarget as HTMLButtonElement).style.transform = "scale(0.92)"; }}
+      onPointerUp={(e) => { (e.currentTarget as HTMLButtonElement).style.transform = "scale(1)"; }}
+      onPointerLeave={(e) => { (e.currentTarget as HTMLButtonElement).style.transform = "scale(1)"; }}
     >
       {label}
     </button>

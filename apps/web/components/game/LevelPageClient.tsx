@@ -108,13 +108,13 @@ export function LevelPageClient({ levelId, worldId }: LevelPageClientProps) {
     return () => window.removeEventListener("keydown", onKey);
   }, [handleAction]);
 
-  if (error) return <p>Error: {error}</p>;
-  if (!level || !state) return <p>Loading...</p>;
+  if (error) return <p>Hata: {error}</p>;
+  if (!level || !state) return <p>Yükleniyor...</p>;
 
   return (
     <main className="app-shell" style={{ padding: "clamp(1rem, 3vw, 1.5rem)", maxWidth: 640, margin: "0 auto" }}>
       <Link href={`/world/${worldId}`} style={{ fontSize: 14, color: "#666", marginBottom: "1rem", display: "block" }}>
-        ← Back to World {worldId}
+        ← Dünya {worldId}&apos;e Dön
       </Link>
       <h1 style={{ fontSize: "clamp(1.15rem, 3.5vw, 1.5rem)" }}>{level.learning_goal}</h1>
       <LevelCanvas

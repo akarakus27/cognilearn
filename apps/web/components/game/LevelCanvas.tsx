@@ -36,9 +36,59 @@ export function LevelCanvas(props: LevelCanvasProps) {
 
   if (phase === "intro") {
     return (
-      <div style={{ padding: "1rem", textAlign: "center" }}>
-        <h2 style={{ fontSize: "clamp(1.1rem, 3vw, 1.35rem)" }}>{level.learning_goal}</h2>
-        <p style={{ color: "#666", marginBottom: "1rem" }}>{level.expected_behavior}</p>
+      <div style={{
+        padding: "2rem 1rem",
+        textAlign: "center",
+        fontFamily: "Nunito, system-ui, sans-serif",
+      }}>
+        {/* In Progress Banner */}
+        <div style={{
+          display: "inline-flex",
+          alignItems: "center",
+          gap: "0.5rem",
+          background: "linear-gradient(135deg, #fef3c7, #fde68a)",
+          border: "2px solid #f59e0b",
+          borderRadius: "2rem",
+          padding: "0.4rem 1rem",
+          fontSize: 13,
+          fontWeight: 800,
+          color: "#92400e",
+          marginBottom: "1.5rem",
+        }}>
+          🚧 Yapım Aşamasında
+        </div>
+
+        {/* Icon */}
+        <div style={{ fontSize: 64, marginBottom: "1rem" }}>🧩</div>
+
+        <h2 style={{
+          fontSize: "clamp(1.2rem, 3vw, 1.5rem)",
+          fontWeight: 900,
+          color: "#1e293b",
+          marginBottom: "0.5rem",
+        }}>
+          {level.learning_goal}
+        </h2>
+
+        <p style={{
+          color: "#64748b",
+          fontSize: 14,
+          marginBottom: "0.5rem",
+          maxWidth: 320,
+          margin: "0 auto 1rem",
+          lineHeight: 1.6,
+        }}>
+          {level.expected_behavior}
+        </p>
+
+        <p style={{
+          color: "#94a3b8",
+          fontSize: 13,
+          marginBottom: "1.5rem",
+        }}>
+          Bu bölüm üzerinde çalışıyoruz. Çok yakında hazır olacak! ✨
+        </p>
+
         <button
           type="button"
           onClick={() => {
@@ -46,17 +96,19 @@ export function LevelCanvas(props: LevelCanvasProps) {
             setLastPosition(worldId, levelId);
           }}
           style={{
-            padding: "0.65rem 1.25rem",
-            background: "#2563eb",
+            padding: "0.75rem 2rem",
+            background: "linear-gradient(135deg, #6366f1, #4f46e5)",
             color: "white",
             border: "none",
-            borderRadius: "0.5rem",
+            borderRadius: "1rem",
             cursor: "pointer",
-            fontWeight: 600,
+            fontWeight: 800,
+            fontSize: 15,
             minHeight: "44px",
+            boxShadow: "0 4px 14px rgba(99,102,241,0.4)",
           }}
         >
-          Start
+          🚀 Başla
         </button>
       </div>
     );
@@ -172,16 +224,16 @@ export function LevelCanvas(props: LevelCanvasProps) {
               minHeight: "44px",
             }}
           >
-            Reset moves
+            Sıfırla
           </button>
         </div>
       )}
       <p style={{ marginTop: "0.5rem", fontSize: 14, color: "#666", textAlign: "center" }}>
-        Moves: {commandHistory.length}
+        Hamle: {commandHistory.length}
       </p>
       <div style={{ marginTop: "0.75rem", textAlign: "center" }}>
         <Link href={`/world/${worldId}`} style={{ fontSize: 14, color: "#666" }}>
-          ← World map
+          ← Dünya haritası
         </Link>
       </div>
     </div>

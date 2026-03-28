@@ -135,18 +135,18 @@ export function ChessLessonCanvas({ level, nextHref, worldHref }: Props) {
         {/* Mini board */}
         <div style={{ flex: "0 0 auto" }}>
           <div style={{ fontSize: 12, fontWeight: 700, color: "#64748b", marginBottom: "0.4rem", textAlign: "center" }}>
-            Starting position
+            Başlangıç pozisyonu
           </div>
           <MiniBoard piece={piece} />
           <div style={{ fontSize: 11, color: "#94a3b8", marginTop: "0.35rem", textAlign: "center" }}>
-            {data.startSquares.length === 1 ? "1 piece" : `${data.startSquares.length} pieces`} on the board
+            Tahtada {data.startSquares.length === 1 ? "1 taş" : `${data.startSquares.length} taş`}
           </div>
         </div>
 
         {/* Facts */}
         <div style={{ flex: 1, minWidth: 180 }}>
           <div style={{ fontSize: 12, fontWeight: 700, color: "#64748b", marginBottom: "0.6rem" }}>
-            📌 Key Facts
+            📌 Önemli Bilgiler
           </div>
           <div style={{ display: "flex", flexDirection: "column", gap: "0.5rem" }}>
             {data.facts.map((fact, i) => (
@@ -202,10 +202,10 @@ export function ChessLessonCanvas({ level, nextHref, worldHref }: Props) {
             minWidth: 200,
           }}
         >
-          {done ? "✅ Got it!" : "Got it! →"}
+          {done ? "✅ Anladım!" : "Anladım! →"}
         </button>
         <div style={{ marginTop: "0.5rem", fontSize: 12, color: "#94a3b8" }}>
-          Next: {nextHref ? "next lesson" : "back to world"}
+          Sonraki: {nextHref ? "sonraki ders" : "dünyaya dön"}
         </div>
       </div>
     </div>

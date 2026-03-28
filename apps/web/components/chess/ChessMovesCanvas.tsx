@@ -89,8 +89,8 @@ export function ChessMovesCanvas({ level, nextHref, worldHref }: Props) {
           {pieceInfo.symbol}
         </div>
         <div>
-          <div style={{ fontSize: 12, fontWeight: 700, opacity: 0.8 }}>How to move</div>
-          <h2 style={{ margin: 0, fontSize: "1.3rem", fontWeight: 900 }}>The {pieceInfo.name}</h2>
+          <div style={{ fontSize: 12, fontWeight: 700, opacity: 0.8 }}>Nasıl hareket eder</div>
+          <h2 style={{ margin: 0, fontSize: "1.3rem", fontWeight: 900 }}>{pieceInfo.name}</h2>
           <div style={{ fontSize: 13, opacity: 0.85, marginTop: 2 }}>{moveInfo.ruleTitle}</div>
         </div>
       </div>

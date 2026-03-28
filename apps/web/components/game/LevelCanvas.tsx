@@ -8,6 +8,30 @@ import { SuccessFeedback } from "./SuccessFeedback";
 import { FailFeedback } from "./FailFeedback";
 import { SequenceCanvas } from "./SequenceCanvas";
 
+function DPadBtn({ label, onClick }: { label: string; onClick: () => void }) {
+  return (
+    <button
+      type="button"
+      onClick={onClick}
+      style={{
+        width: 52, height: 52,
+        background: "white",
+        border: "2px solid #e2e8f0",
+        borderRadius: "0.875rem",
+        cursor: "pointer",
+        fontSize: 24,
+        display: "flex", alignItems: "center", justifyContent: "center",
+        boxShadow: "0 2px 6px rgba(0,0,0,0.08)",
+        transition: "transform 0.1s, box-shadow 0.1s",
+      }}
+      onMouseDown={(e) => { (e.currentTarget as HTMLButtonElement).style.transform = "scale(0.92)"; }}
+      onMouseUp={(e) => { (e.currentTarget as HTMLButtonElement).style.transform = "scale(1)"; }}
+    >
+      {label}
+    </button>
+  );
+}
+
 interface LevelCanvasProps {
   state: EngineState;
   onAction: (action: Action) => void;
@@ -185,46 +209,28 @@ export function LevelCanvas(props: LevelCanvasProps) {
         })}
       </div>
       {phase === "play" && (
-        <div
-          style={{
-            marginTop: "1rem",
-            display: "flex",
-            flexWrap: "wrap",
-            gap: "0.5rem",
-            justifyContent: "center",
-          }}
-        >
-          {(["UP", "DOWN", "LEFT", "RIGHT"] as GridCommand[]).map((cmd) => (
-            <button
-              key={cmd}
-              type="button"
-              onClick={() => onAction({ type: "EXECUTE_COMMAND", command: cmd })}
-              style={{
-                padding: "0.5rem 0.75rem",
-                background: "#f3f4f6",
-                border: "1px solid #d1d5db",
-                borderRadius: "0.375rem",
-                cursor: "pointer",
-                minHeight: "44px",
-                minWidth: "44px",
-              }}
-            >
-              {cmd}
-            </button>
-          ))}
+        <div style={{ marginTop: "1.25rem", display: "flex", flexDirection: "column", alignItems: "center", gap: "0.5rem" }}>
+          {/* D-pad */}
+          <div style={{ display: "grid", gridTemplateColumns: "52px 52px 52px", gap: "0.35rem" }}>
+            {/* Row 1: empty, UP, empty */}
+            <div />
+            <DPadBtn label="⬆️" onClick={() => onAction({ type: "EXECUTE_COMMAND", command: "UP" })} />
+            <div />
+            {/* Row 2: LEFT, center dot, RIGHT */}
+            <DPadBtn label="⬅️" onClick={() => onAction({ type: "EXECUTE_COMMAND", command: "LEFT" })} />
+            <div style={{ width: 52, height: 52, borderRadius: "50%", background: "#e2e8f0", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 18 }}>●</div>
+            <DPadBtn label="➡️" onClick={() => onAction({ type: "EXECUTE_COMMAND", command: "RIGHT" })} />
+            {/* Row 3: empty, DOWN, empty */}
+            <div />
+            <DPadBtn label="⬇️" onClick={() => onAction({ type: "EXECUTE_COMMAND", command: "DOWN" })} />
+            <div />
+          </div>
           <button
             type="button"
             onClick={() => onAction({ type: "RESET_PLAY" })}
-            style={{
-              padding: "0.5rem 0.75rem",
-              background: "#fff",
-              border: "1px solid #d1d5db",
-              borderRadius: "0.375rem",
-              cursor: "pointer",
-              minHeight: "44px",
-            }}
+            style={{ marginTop: "0.5rem", padding: "0.5rem 1.25rem", background: "#f1f5f9", border: "1.5px solid #e2e8f0", borderRadius: "0.75rem", cursor: "pointer", fontWeight: 700, fontSize: 13, color: "#64748b" }}
           >
-            Sıfırla
+            🔄 Sıfırla
           </button>
         </div>
       )}

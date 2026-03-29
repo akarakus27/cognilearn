@@ -35,7 +35,9 @@
       "Bash(cat 'c:/Users/Abdul/Desktop/Yeni klasör \\(2\\)/CogniLearn/.gitignore')",
       "Bash(cat 'c:/Users/Abdul/Desktop/Yeni klasör \\(2\\)/CogniLearn/README.md')",
       "Bash(pnpm --filter web build)",
-      "Bash(pnpm add:*)"
+      "Bash(pnpm add:*)",
+      "Bash(cat \"c:/Users/Abdul/Desktop/Yeni klasör \\(2\\)/CogniLearn/content/algorithm/level-104.json\")",
+      "Bash(cat \"c:/Users/Abdul/Desktop/Yeni klasör \\(2\\)/CogniLearn/content/algorithm/level-106.json\")"
     ]
   }
 }

@@ -128,52 +128,26 @@ export function LevelCanvas(props: LevelCanvasProps) {
         textAlign: "center",
         fontFamily: "Nunito, system-ui, sans-serif",
       }}>
-        {/* In Progress Banner */}
-        <div style={{
-          display: "inline-flex",
-          alignItems: "center",
-          gap: "0.5rem",
-          background: "linear-gradient(135deg, #fef3c7, #fde68a)",
-          border: "2px solid #f59e0b",
-          borderRadius: "2rem",
-          padding: "0.4rem 1rem",
-          fontSize: 13,
-          fontWeight: 800,
-          color: "#92400e",
-          marginBottom: "1.5rem",
-        }}>
-          🚧 Yapım Aşamasında
-        </div>
-
         {/* Icon */}
         <div style={{ fontSize: 64, marginBottom: "1rem" }}>🧩</div>
 
         <h2 style={{
           fontSize: "clamp(1.2rem, 3vw, 1.5rem)",
           fontWeight: 900,
-          color: "#1e293b",
+          color: "white",
           marginBottom: "0.5rem",
         }}>
           {level.learning_goal}
         </h2>
 
         <p style={{
-          color: "#64748b",
+          color: "rgba(255,255,255,0.6)",
           fontSize: 14,
-          marginBottom: "0.5rem",
           maxWidth: 320,
-          margin: "0 auto 1rem",
+          margin: "0 auto 1.5rem",
           lineHeight: 1.6,
         }}>
           {level.expected_behavior}
-        </p>
-
-        <p style={{
-          color: "#94a3b8",
-          fontSize: 13,
-          marginBottom: "1.5rem",
-        }}>
-          Bu bölüm üzerinde çalışıyoruz. Çok yakında hazır olacak! ✨
         </p>
 
         <button

@@ -169,7 +169,7 @@ function WorldCards() {
       bg: "bg-emerald-50",
       border: "border-emerald-200",
       status: "active",
-      levels: 4,
+      levels: 15,
     },
     {
       id: "2",
@@ -180,7 +180,7 @@ function WorldCards() {
       bg: "bg-violet-50",
       border: "border-violet-200",
       status: "active",
-      levels: 21,
+      levels: 30,
     },
     {
       id: "3",
@@ -191,12 +191,12 @@ function WorldCards() {
       bg: "bg-pink-50",
       border: "border-pink-200",
       status: "active",
-      levels: 12,
+      levels: 18,
     },
     {
       id: "4",
       name: "Loop Land",
-      description: "Discover patterns and repeat them with loops!",
+      description: "Repeat commands efficiently with loops!",
       icon: "🔁",
       color: "from-amber-400 to-orange-500",
       bg: "bg-amber-50",
@@ -207,7 +207,7 @@ function WorldCards() {
     {
       id: "5",
       name: "Akıllı Yollar",
-      description: "Koşulları öğren — robota karar verdirmeyi öğret!",
+      description: "Robota IF/ELSE ile karar verdirmeyi öğret!",
       icon: "🤔",
       color: "from-sky-400 to-cyan-500",
       bg: "bg-sky-50",
@@ -218,7 +218,7 @@ function WorldCards() {
     {
       id: "6",
       name: "Fonksiyon Fabrikası",
-      description: "Kendi komutlarını yarat ve tekrar kullan!",
+      description: "Tekrar kullanılabilir komutlar yaz ve çağır!",
       icon: "🔧",
       color: "from-violet-500 to-fuchsia-500",
       bg: "bg-violet-50",

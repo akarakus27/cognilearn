@@ -68,6 +68,10 @@ function LevelNav({ worldId, levelTitle }: { worldId: string; levelTitle: string
         <Link href="/world/1" style={navLinkStyle}>🗺️</Link>
         <Link href="/world/2" style={navLinkStyle}>🧩</Link>
         <Link href="/world/3" style={navLinkStyle}>♟️</Link>
+        <Link href="/world/4" style={navLinkStyle}>🔁</Link>
+        <Link href="/world/5" style={navLinkStyle}>🤔</Link>
+        <Link href="/world/6" style={navLinkStyle}>🔧</Link>
+        <Link href="/world/7" style={navLinkStyle}>🐛</Link>
         <Link href="/" style={{ ...navLinkStyle, marginLeft: "0.25rem", background: "rgba(124,58,237,0.3)", border: "1px solid rgba(124,58,237,0.4)" }}>🏠</Link>
       </div>
     </nav>
@@ -101,7 +105,7 @@ export function LevelPageClient({ levelId, worldId: worldIdProp }: LevelPageClie
     (async () => {
       try {
         // Try all worlds to find which one contains this level
-        const ALL_WORLD_IDS = ["1", "2", "3"];
+        const ALL_WORLD_IDS = ["1", "2", "3", "4", "5", "6", "7"];
         const [data, ...worlds] = await Promise.all([
           fetchLevel(contentLevelId),
           ...ALL_WORLD_IDS.map((wid) => fetchWorld(wid).catch(() => null)),

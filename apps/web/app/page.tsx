@@ -201,7 +201,7 @@ function WorldCards() {
       color: "from-amber-400 to-orange-500",
       bg: "bg-amber-50",
       border: "border-amber-200",
-      status: "locked",
+      status: "active",
       levels: 12,
     },
     {
@@ -212,7 +212,7 @@ function WorldCards() {
       color: "from-sky-400 to-cyan-500",
       bg: "bg-sky-50",
       border: "border-sky-200",
-      status: "locked",
+      status: "active",
       levels: 10,
     },
     {
@@ -223,7 +223,7 @@ function WorldCards() {
       color: "from-violet-500 to-fuchsia-500",
       bg: "bg-violet-50",
       border: "border-violet-200",
-      status: "locked",
+      status: "active",
       levels: 10,
     },
     {
@@ -234,7 +234,7 @@ function WorldCards() {
       color: "from-rose-500 to-red-600",
       bg: "bg-rose-50",
       border: "border-rose-200",
-      status: "locked",
+      status: "active",
       levels: 8,
     },
   ];

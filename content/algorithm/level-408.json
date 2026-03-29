@@ -1,0 +1,19 @@
+{
+  "id": "level-408",
+  "mode": "function",
+  "difficulty": 3,
+  "skill_target": "functions",
+  "learning_goal": "Uzun düz yolda fonksiyon kullan",
+  "expected_behavior": "ILERI fonksiyonunu tekrar tekrar çağırarak uzun yolu kat et",
+  "grid": {
+    "rows": 3,
+    "cols": 6,
+    "start": { "x": 0, "y": 1 },
+    "goal": { "x": 5, "y": 1 },
+    "obstacles": []
+  },
+  "solution": ["RIGHT", "RIGHT", "RIGHT", "RIGHT", "RIGHT"],
+  "meta": {
+    "functions": { "ILERI": ["RIGHT"] }
+  }
+}

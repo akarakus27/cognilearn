@@ -1,0 +1,23 @@
+{
+  "id": "level-308",
+  "mode": "conditional",
+  "difficulty": 3,
+  "skill_target": "conditionals",
+  "learning_goal": "IF ve REPEAT'i birlikte kullan",
+  "expected_behavior": "Engeli IF ile aş, ardından REPEAT ile ilerle",
+  "grid": {
+    "rows": 3,
+    "cols": 4,
+    "start": { "x": 0, "y": 0 },
+    "goal": { "x": 3, "y": 2 },
+    "obstacles": [{ "x": 1, "y": 0 }]
+  },
+  "solution": [
+    { "type": "IF", "condition": "WALL_AHEAD", "then": ["DOWN"], "else": ["RIGHT"] },
+    { "type": "REPEAT", "count": 2, "body": ["RIGHT"] },
+    { "type": "REPEAT", "count": 2, "body": ["DOWN"] }
+  ],
+  "meta": {
+    "initialFacing": "RIGHT"
+  }
+}

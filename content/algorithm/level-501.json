@@ -1,0 +1,21 @@
+{
+  "id": "level-501",
+  "mode": "debug",
+  "difficulty": 1,
+  "skill_target": "debugging",
+  "learning_goal": "Hatayı bul!",
+  "expected_behavior": "Yanlış komutu düzelt ve robotu hedefe ulaştır",
+  "grid": {
+    "rows": 1,
+    "cols": 3,
+    "start": { "x": 0, "y": 0 },
+    "goal": { "x": 2, "y": 0 },
+    "obstacles": []
+  },
+  "solution": ["RIGHT", "RIGHT"],
+  "meta": {
+    "buggy_solution": ["RIGHT", "DOWN"],
+    "bug_index": 1,
+    "hint": "Neden aşağı gidiyoruz?"
+  }
+}

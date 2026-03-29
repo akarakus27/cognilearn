@@ -1,0 +1,23 @@
+{
+  "id": "level-301",
+  "mode": "conditional",
+  "difficulty": 1,
+  "skill_target": "conditionals",
+  "learning_goal": "Önde duvar varsa, aşağı git",
+  "expected_behavior": "Robotu engelden kaçınarak hedefe ulaştır",
+  "grid": {
+    "rows": 3,
+    "cols": 3,
+    "start": { "x": 0, "y": 0 },
+    "goal": { "x": 2, "y": 0 },
+    "obstacles": [{ "x": 1, "y": 0 }]
+  },
+  "solution": [
+    { "type": "IF", "condition": "WALL_AHEAD", "then": ["DOWN"], "else": ["RIGHT"] },
+    "RIGHT",
+    "UP"
+  ],
+  "meta": {
+    "initialFacing": "RIGHT"
+  }
+}

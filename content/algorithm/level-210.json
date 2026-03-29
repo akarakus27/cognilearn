@@ -1,0 +1,15 @@
+{
+  "id": "algorithm/level-210",
+  "mode": "loop",
+  "skill_target": "loops",
+  "difficulty": 4,
+  "learning_goal": "Büyük sarmal",
+  "expected_behavior": "REPEAT(4) { RIGHT, DOWN, LEFT, DOWN } — desen uzuyor",
+  "grid": {
+    "rows": 9,
+    "cols": 3,
+    "start": { "x": 0, "y": 0 },
+    "goal": { "x": 0, "y": 8 }
+  },
+  "solution": [{ "type": "REPEAT", "count": 4, "body": ["RIGHT", "DOWN", "LEFT", "DOWN"] }]
+}

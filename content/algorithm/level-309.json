@@ -1,0 +1,21 @@
+{
+  "id": "level-309",
+  "mode": "conditional",
+  "difficulty": 3,
+  "skill_target": "conditionals",
+  "learning_goal": "GOAL_AHEAD koşulunu anla",
+  "expected_behavior": "Hedefin önünde olup olmadığını kontrol ederek ilerle",
+  "grid": {
+    "rows": 3,
+    "cols": 3,
+    "start": { "x": 0, "y": 0 },
+    "goal": { "x": 2, "y": 0 },
+    "obstacles": []
+  },
+  "solution": [
+    { "type": "REPEAT", "count": 2, "body": ["RIGHT"] }
+  ],
+  "meta": {
+    "initialFacing": "RIGHT"
+  }
+}

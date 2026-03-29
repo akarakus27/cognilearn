@@ -1,0 +1,22 @@
+{
+  "id": "level-305",
+  "mode": "conditional",
+  "difficulty": 2,
+  "skill_target": "conditionals",
+  "learning_goal": "Sağ tarafı kontrol et ve hedefe ulaş",
+  "expected_behavior": "REPEAT blokları kullanarak köşegen yol izle",
+  "grid": {
+    "rows": 4,
+    "cols": 4,
+    "start": { "x": 0, "y": 0 },
+    "goal": { "x": 3, "y": 3 },
+    "obstacles": []
+  },
+  "solution": [
+    { "type": "REPEAT", "count": 3, "body": ["RIGHT"] },
+    { "type": "REPEAT", "count": 3, "body": ["DOWN"] }
+  ],
+  "meta": {
+    "initialFacing": "RIGHT"
+  }
+}

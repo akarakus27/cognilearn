@@ -1,0 +1,15 @@
+{
+  "id": "algorithm/level-205",
+  "mode": "loop",
+  "skill_target": "loops",
+  "difficulty": 2,
+  "learning_goal": "Uzun koridor",
+  "expected_behavior": "REPEAT(5) { RIGHT } — hiç durmadan ilerle",
+  "grid": {
+    "rows": 1,
+    "cols": 6,
+    "start": { "x": 0, "y": 0 },
+    "goal": { "x": 5, "y": 0 }
+  },
+  "solution": [{ "type": "REPEAT", "count": 5, "body": ["RIGHT"] }]
+}

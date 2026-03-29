@@ -1,0 +1,19 @@
+{
+  "id": "level-405",
+  "mode": "function",
+  "difficulty": 2,
+  "skill_target": "functions",
+  "learning_goal": "SAGA fonksiyonu ile yatay ilerleme",
+  "expected_behavior": "SAGA fonksiyonunu kullanarak sağa git, ardından aşağı in",
+  "grid": {
+    "rows": 2,
+    "cols": 5,
+    "start": { "x": 0, "y": 0 },
+    "goal": { "x": 4, "y": 1 },
+    "obstacles": []
+  },
+  "solution": ["RIGHT", "RIGHT", "RIGHT", "RIGHT", "DOWN"],
+  "meta": {
+    "functions": { "SAGA": ["RIGHT"] }
+  }
+}

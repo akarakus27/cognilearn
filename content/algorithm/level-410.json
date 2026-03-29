@@ -1,0 +1,23 @@
+{
+  "id": "level-410",
+  "mode": "function",
+  "difficulty": 5,
+  "skill_target": "functions",
+  "learning_goal": "Fonksiyon Ustası! Birden fazla fonksiyonu birleştir",
+  "expected_behavior": "CIFT_SAG ve CIFT_ASAGI fonksiyonlarını birlikte kullanarak hedefe ulaş",
+  "grid": {
+    "rows": 5,
+    "cols": 6,
+    "start": { "x": 0, "y": 0 },
+    "goal": { "x": 5, "y": 4 },
+    "obstacles": [{ "x": 2, "y": 2 }, { "x": 3, "y": 2 }]
+  },
+  "solution": ["RIGHT", "RIGHT", "DOWN", "DOWN", "RIGHT", "RIGHT", "DOWN", "DOWN", "RIGHT", "RIGHT"],
+  "meta": {
+    "functions": {
+      "CIFT_SAG": ["RIGHT", "RIGHT"],
+      "CIFT_ASAGI": ["DOWN", "DOWN"]
+    },
+    "hint": "Her iki fonksiyonu da kullan!"
+  }
+}

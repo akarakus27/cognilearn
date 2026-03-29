@@ -1,0 +1,20 @@
+{
+  "id": "level-409",
+  "mode": "function",
+  "difficulty": 4,
+  "skill_target": "functions",
+  "learning_goal": "Büyük adımlarla büyük mesafeler kat et",
+  "expected_behavior": "ADIM fonksiyonunu 4 kez çağırarak hedefe ulaş",
+  "grid": {
+    "rows": 5,
+    "cols": 5,
+    "start": { "x": 0, "y": 0 },
+    "goal": { "x": 4, "y": 4 },
+    "obstacles": []
+  },
+  "solution": ["RIGHT", "DOWN", "RIGHT", "DOWN", "RIGHT", "DOWN", "RIGHT", "DOWN"],
+  "meta": {
+    "functions": { "ADIM": ["RIGHT", "DOWN"] },
+    "hint": "ADIM'ı 4 kez çağır"
+  }
+}

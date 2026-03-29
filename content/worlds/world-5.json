@@ -1,0 +1,30 @@
+{
+  "id": "world-5",
+  "name": "Akıllı Yollar",
+  "description": "Koşulları öğren — robota karar verdirmeyi öğret!",
+  "levels": [
+    "algorithm/level-301",
+    "algorithm/level-302",
+    "algorithm/level-303",
+    "algorithm/level-304",
+    "algorithm/level-305",
+    "algorithm/level-306",
+    "algorithm/level-307",
+    "algorithm/level-308",
+    "algorithm/level-309",
+    "algorithm/level-310"
+  ],
+  "levelTitles": {
+    "algorithm/level-301": "İlk Koşul",
+    "algorithm/level-302": "Önü Açık",
+    "algorithm/level-303": "IF-ELSE",
+    "algorithm/level-304": "Tekrar + IF",
+    "algorithm/level-305": "Sağı Kontrol",
+    "algorithm/level-306": "Büyük Detour",
+    "algorithm/level-307": "İki Karar",
+    "algorithm/level-308": "IF + Döngü",
+    "algorithm/level-309": "Hedefe Bak",
+    "algorithm/level-310": "Koşul Ustası! 🏆"
+  },
+  "order": 5
+}

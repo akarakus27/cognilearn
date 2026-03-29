@@ -1,0 +1,1 @@
+{"id":"algorithm/level-203","mode":"loop","skill_target":"loops","difficulty":2,"learning_goal":"İki adım: sağ ve aşağı","expected_behavior":"REPEAT(2) { RIGHT, DOWN } — vücutta 2 komut olabilir!","grid":{"rows":3,"cols":3,"start":{"x":0,"y":0},"goal":{"x":2,"y":2}},"solution":[{"type":"REPEAT","count":2,"body":["RIGHT","DOWN"]}]}

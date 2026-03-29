@@ -1,0 +1,19 @@
+{
+  "id": "algorithm/level-207",
+  "mode": "loop",
+  "skill_target": "loops",
+  "difficulty": 3,
+  "learning_goal": "Döngü + ekstra komut",
+  "expected_behavior": "Önce döngü, sonra tek komut ekle",
+  "grid": {
+    "rows": 4,
+    "cols": 5,
+    "start": { "x": 0, "y": 0 },
+    "goal": { "x": 4, "y": 3 },
+    "obstacles": [{ "x": 3, "y": 0 }, { "x": 3, "y": 1 }, { "x": 3, "y": 2 }]
+  },
+  "solution": [
+    { "type": "REPEAT", "count": 3, "body": ["RIGHT", "DOWN"] },
+    "RIGHT"
+  ]
+}

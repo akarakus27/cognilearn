@@ -1,0 +1,15 @@
+{
+  "id": "algorithm/level-206",
+  "mode": "loop",
+  "skill_target": "loops",
+  "difficulty": 3,
+  "learning_goal": "Zikzak desen",
+  "expected_behavior": "REPEAT(3) { RIGHT, DOWN, LEFT, DOWN } — sarmal yolu keşfet",
+  "grid": {
+    "rows": 7,
+    "cols": 3,
+    "start": { "x": 0, "y": 0 },
+    "goal": { "x": 0, "y": 6 }
+  },
+  "solution": [{ "type": "REPEAT", "count": 3, "body": ["RIGHT", "DOWN", "LEFT", "DOWN"] }]
+}

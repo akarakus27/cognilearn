@@ -1,0 +1,21 @@
+{
+  "id": "algorithm/level-209",
+  "mode": "loop",
+  "skill_target": "loops",
+  "difficulty": 4,
+  "learning_goal": "Engelli koridor",
+  "expected_behavior": "Döngü + engelleri aşmak için ekstra komutlar",
+  "grid": {
+    "rows": 5,
+    "cols": 6,
+    "start": { "x": 0, "y": 0 },
+    "goal": { "x": 5, "y": 4 },
+    "obstacles": [{ "x": 2, "y": 1 }, { "x": 2, "y": 2 }, { "x": 3, "y": 2 }, { "x": 3, "y": 3 }]
+  },
+  "solution": [
+    { "type": "REPEAT", "count": 2, "body": ["RIGHT"] },
+    "DOWN",
+    { "type": "REPEAT", "count": 3, "body": ["RIGHT"] },
+    { "type": "REPEAT", "count": 3, "body": ["DOWN"] }
+  ]
+}

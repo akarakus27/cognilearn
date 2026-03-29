@@ -1,0 +1,21 @@
+{
+  "id": "level-504",
+  "mode": "debug",
+  "difficulty": 2,
+  "skill_target": "debugging",
+  "learning_goal": "Orta seviye hatayı tespit et",
+  "expected_behavior": "Üçüncü hamlede yanlış yön komutunu düzelt",
+  "grid": {
+    "rows": 3,
+    "cols": 4,
+    "start": { "x": 0, "y": 0 },
+    "goal": { "x": 3, "y": 2 },
+    "obstacles": []
+  },
+  "solution": ["RIGHT", "RIGHT", "DOWN", "RIGHT", "DOWN"],
+  "meta": {
+    "buggy_solution": ["RIGHT", "RIGHT", "RIGHT", "RIGHT", "DOWN"],
+    "bug_index": 2,
+    "hint": "Üçüncü hamle nereden geçiyor?"
+  }
+}

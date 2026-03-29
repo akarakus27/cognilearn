@@ -1,0 +1,1 @@
+{"id":"algorithm/level-202","mode":"loop","skill_target":"loops","difficulty":1,"learning_goal":"Aşağı in! 4 kez aşağı","expected_behavior":"REPEAT(4) { DOWN } — dikey döngü","grid":{"rows":5,"cols":1,"start":{"x":0,"y":0},"goal":{"x":0,"y":4}},"solution":[{"type":"REPEAT","count":4,"body":["DOWN"]}]}

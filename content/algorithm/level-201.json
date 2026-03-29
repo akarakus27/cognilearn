@@ -1,0 +1,1 @@
+{"id":"algorithm/level-201","mode":"loop","skill_target":"loops","difficulty":1,"learning_goal":"İlk döngün! 3 kez sağa git","expected_behavior":"REPEAT(3) { RIGHT } kullan — tek blok yeterli!","grid":{"rows":1,"cols":4,"start":{"x":0,"y":0},"goal":{"x":3,"y":0}},"solution":[{"type":"REPEAT","count":3,"body":["RIGHT"]}]}

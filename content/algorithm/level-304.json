@@ -1,0 +1,21 @@
+{
+  "id": "level-304",
+  "mode": "conditional",
+  "difficulty": 2,
+  "skill_target": "conditionals",
+  "learning_goal": "Her adımda kontrol et",
+  "expected_behavior": "Tekrar bloğu ile düz bir yolda ilerle",
+  "grid": {
+    "rows": 1,
+    "cols": 5,
+    "start": { "x": 0, "y": 0 },
+    "goal": { "x": 4, "y": 0 },
+    "obstacles": []
+  },
+  "solution": [
+    { "type": "REPEAT", "count": 4, "body": ["RIGHT"] }
+  ],
+  "meta": {
+    "initialFacing": "RIGHT"
+  }
+}

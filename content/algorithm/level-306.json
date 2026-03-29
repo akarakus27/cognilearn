@@ -1,0 +1,22 @@
+{
+  "id": "level-306",
+  "mode": "conditional",
+  "difficulty": 3,
+  "skill_target": "conditionals",
+  "learning_goal": "Büyük engeli aşmak için IF kullan",
+  "expected_behavior": "Çift engel arasından detour yaparak hedefe ulaş",
+  "grid": {
+    "rows": 4,
+    "cols": 4,
+    "start": { "x": 0, "y": 1 },
+    "goal": { "x": 3, "y": 1 },
+    "obstacles": [{ "x": 1, "y": 1 }, { "x": 2, "y": 1 }]
+  },
+  "solution": [
+    { "type": "IF", "condition": "WALL_AHEAD", "then": ["UP", "RIGHT", "RIGHT", "DOWN"], "else": ["RIGHT"] },
+    "RIGHT"
+  ],
+  "meta": {
+    "initialFacing": "RIGHT"
+  }
+}

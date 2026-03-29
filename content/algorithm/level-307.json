@@ -1,0 +1,22 @@
+{
+  "id": "level-307",
+  "mode": "conditional",
+  "difficulty": 3,
+  "skill_target": "conditionals",
+  "learning_goal": "İki ayrı karar noktasını yönet",
+  "expected_behavior": "Yolun ortasındaki engeli IF bloğu ile aş",
+  "grid": {
+    "rows": 3,
+    "cols": 5,
+    "start": { "x": 0, "y": 1 },
+    "goal": { "x": 4, "y": 1 },
+    "obstacles": [{ "x": 2, "y": 1 }]
+  },
+  "solution": [
+    "RIGHT",
+    { "type": "IF", "condition": "WALL_AHEAD", "then": ["UP", "RIGHT", "RIGHT", "DOWN"], "else": ["RIGHT"] }
+  ],
+  "meta": {
+    "initialFacing": "RIGHT"
+  }
+}

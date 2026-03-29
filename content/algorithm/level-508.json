@@ -1,0 +1,21 @@
+{
+  "id": "level-508",
+  "mode": "debug",
+  "difficulty": 4,
+  "skill_target": "debugging",
+  "learning_goal": "Hata Avcısı! En zor hatayı bul",
+  "expected_behavior": "Beşinci hamlede yanlış komutu düzelterek engelli büyük ızgarayı geç",
+  "grid": {
+    "rows": 5,
+    "cols": 5,
+    "start": { "x": 0, "y": 0 },
+    "goal": { "x": 4, "y": 4 },
+    "obstacles": [{ "x": 2, "y": 2 }]
+  },
+  "solution": ["RIGHT", "RIGHT", "DOWN", "DOWN", "RIGHT", "RIGHT", "DOWN", "DOWN"],
+  "meta": {
+    "buggy_solution": ["RIGHT", "RIGHT", "DOWN", "DOWN", "LEFT", "RIGHT", "DOWN", "DOWN"],
+    "bug_index": 4,
+    "hint": "Beşinci hamleye dikkat!"
+  }
+}

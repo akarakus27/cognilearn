@@ -1,0 +1,20 @@
+{
+  "id": "level-401",
+  "mode": "function",
+  "difficulty": 1,
+  "skill_target": "functions",
+  "learning_goal": "Fonksiyon tanımla: ILERI = RIGHT",
+  "expected_behavior": "ILERI'yi 3 kez çağır",
+  "grid": {
+    "rows": 1,
+    "cols": 4,
+    "start": { "x": 0, "y": 0 },
+    "goal": { "x": 3, "y": 0 },
+    "obstacles": []
+  },
+  "solution": ["RIGHT", "RIGHT", "RIGHT"],
+  "meta": {
+    "functions": { "ILERI": ["RIGHT"] },
+    "hint": "ILERI fonksiyonunu 3 kez çağır"
+  }
+}

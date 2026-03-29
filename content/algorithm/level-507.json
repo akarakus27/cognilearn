@@ -1,0 +1,20 @@
+{
+  "id": "level-507",
+  "mode": "debug",
+  "difficulty": 3,
+  "skill_target": "debugging",
+  "learning_goal": "Derin bir hatayı tespit et",
+  "expected_behavior": "Dördüncü hamlede saklı hatayı düzelt",
+  "grid": {
+    "rows": 4,
+    "cols": 4,
+    "start": { "x": 0, "y": 0 },
+    "goal": { "x": 3, "y": 3 },
+    "obstacles": []
+  },
+  "solution": ["RIGHT", "RIGHT", "DOWN", "RIGHT", "DOWN", "DOWN"],
+  "meta": {
+    "buggy_solution": ["RIGHT", "RIGHT", "DOWN", "LEFT", "DOWN", "DOWN"],
+    "bug_index": 3
+  }
+}

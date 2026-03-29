@@ -1,0 +1,34 @@
+{
+  "id": "world-4",
+  "name": "Loop Land",
+  "description": "Tekrar eden desenleri bul ve döngüyle kodla!",
+  "levels": [
+    "algorithm/level-201",
+    "algorithm/level-202",
+    "algorithm/level-203",
+    "algorithm/level-204",
+    "algorithm/level-205",
+    "algorithm/level-206",
+    "algorithm/level-207",
+    "algorithm/level-208",
+    "algorithm/level-209",
+    "algorithm/level-210",
+    "algorithm/level-211",
+    "algorithm/level-212"
+  ],
+  "levelTitles": {
+    "algorithm/level-201": "İlk Döngü",
+    "algorithm/level-202": "Aşağı İn",
+    "algorithm/level-203": "İki Adım",
+    "algorithm/level-204": "Merdiven",
+    "algorithm/level-205": "Uzun Koridor",
+    "algorithm/level-206": "Zikzak Desen",
+    "algorithm/level-207": "Döngü + Ekstra",
+    "algorithm/level-208": "İki Döngü",
+    "algorithm/level-209": "Engelli Koridor",
+    "algorithm/level-210": "Büyük Sarmal",
+    "algorithm/level-211": "Karmaşık Desen",
+    "algorithm/level-212": "Loop Ustası! 🏆"
+  },
+  "order": 4
+}

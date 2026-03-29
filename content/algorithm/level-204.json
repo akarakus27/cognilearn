@@ -1,0 +1,1 @@
+{"id":"algorithm/level-204","mode":"loop","skill_target":"loops","difficulty":2,"learning_goal":"Merdiven","expected_behavior":"REPEAT(3) { RIGHT, DOWN } — 3 kez tekrarla","grid":{"rows":4,"cols":4,"start":{"x":0,"y":0},"goal":{"x":3,"y":3}},"solution":[{"type":"REPEAT","count":3,"body":["RIGHT","DOWN"]}]}

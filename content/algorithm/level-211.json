@@ -1,0 +1,20 @@
+{
+  "id": "algorithm/level-211",
+  "mode": "loop",
+  "skill_target": "loops",
+  "difficulty": 5,
+  "learning_goal": "Karmaşık desen",
+  "expected_behavior": "3 farklı blok kullan — döngüler + tekil komutlar",
+  "grid": {
+    "rows": 5,
+    "cols": 7,
+    "start": { "x": 0, "y": 0 },
+    "goal": { "x": 6, "y": 4 },
+    "obstacles": [{ "x": 3, "y": 1 }, { "x": 3, "y": 2 }, { "x": 3, "y": 3 }]
+  },
+  "solution": [
+    { "type": "REPEAT", "count": 3, "body": ["RIGHT"] },
+    { "type": "REPEAT", "count": 4, "body": ["DOWN"] },
+    { "type": "REPEAT", "count": 3, "body": ["RIGHT"] }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "id": "world-6",
+  "name": "Fonksiyon Fabrikası",
+  "description": "Kendi komutlarını yarat ve tekrar kullan!",
+  "levels": [
+    "algorithm/level-401",
+    "algorithm/level-402",
+    "algorithm/level-403",
+    "algorithm/level-404",
+    "algorithm/level-405",
+    "algorithm/level-406",
+    "algorithm/level-407",
+    "algorithm/level-408",
+    "algorithm/level-409",
+    "algorithm/level-410"
+  ],
+  "levelTitles": {
+    "algorithm/level-401": "İlk Fonksiyon",
+    "algorithm/level-402": "İki Fonksiyon",
+    "algorithm/level-403": "Köşegen Adım",
+    "algorithm/level-404": "Adım Fonksiyonu",
+    "algorithm/level-405": "Sağa Git",
+    "algorithm/level-406": "Satır Fonksiyonu",
+    "algorithm/level-407": "Zigzag Func",
+    "algorithm/level-408": "Uzun Yol",
+    "algorithm/level-409": "Büyük Adımlar",
+    "algorithm/level-410": "Fonksiyon Ustası! 🏆"
+  },
+  "order": 6
+}

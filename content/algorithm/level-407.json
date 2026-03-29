@@ -1,0 +1,19 @@
+{
+  "id": "level-407",
+  "mode": "function",
+  "difficulty": 3,
+  "skill_target": "functions",
+  "learning_goal": "Engeller arasında ZIG fonksiyonu ile ilerle",
+  "expected_behavior": "ZIG fonksiyonunu kullanarak engellerin etrafından geç",
+  "grid": {
+    "rows": 4,
+    "cols": 4,
+    "start": { "x": 0, "y": 0 },
+    "goal": { "x": 3, "y": 3 },
+    "obstacles": [{ "x": 1, "y": 1 }, { "x": 2, "y": 2 }]
+  },
+  "solution": ["RIGHT", "DOWN", "RIGHT", "DOWN", "RIGHT", "DOWN"],
+  "meta": {
+    "functions": { "ZIG": ["RIGHT", "DOWN"] }
+  }
+}

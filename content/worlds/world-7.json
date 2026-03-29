@@ -1,0 +1,26 @@
+{
+  "id": "world-7",
+  "name": "Hata Avcısı",
+  "description": "Bozuk kodu bul ve düzelt — gerçek programcılar böyle çalışır!",
+  "levels": [
+    "algorithm/level-501",
+    "algorithm/level-502",
+    "algorithm/level-503",
+    "algorithm/level-504",
+    "algorithm/level-505",
+    "algorithm/level-506",
+    "algorithm/level-507",
+    "algorithm/level-508"
+  ],
+  "levelTitles": {
+    "algorithm/level-501": "İlk Hata",
+    "algorithm/level-502": "Yanlış Yön",
+    "algorithm/level-503": "Gizli Bug",
+    "algorithm/level-504": "Orta Bug",
+    "algorithm/level-505": "Sol mu Sağ mı?",
+    "algorithm/level-506": "Obstacle Bug",
+    "algorithm/level-507": "Derin Bug",
+    "algorithm/level-508": "Hata Avcısı! 🏆"
+  },
+  "order": 7
+}

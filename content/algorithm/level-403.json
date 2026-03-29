@@ -1,0 +1,20 @@
+{
+  "id": "level-403",
+  "mode": "function",
+  "difficulty": 2,
+  "skill_target": "functions",
+  "learning_goal": "Köşegen hareket fonksiyonu oluştur",
+  "expected_behavior": "KOSEGEN fonksiyonunu 2 kez çağırarak hedefe ulaş",
+  "grid": {
+    "rows": 3,
+    "cols": 3,
+    "start": { "x": 0, "y": 0 },
+    "goal": { "x": 2, "y": 2 },
+    "obstacles": []
+  },
+  "solution": ["RIGHT", "DOWN", "RIGHT", "DOWN"],
+  "meta": {
+    "functions": { "KOSEGEN": ["RIGHT", "DOWN"] },
+    "hint": "KOSEGEN'i 2 kez çağır"
+  }
+}

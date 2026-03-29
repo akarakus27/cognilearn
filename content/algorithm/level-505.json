@@ -1,0 +1,20 @@
+{
+  "id": "level-505",
+  "mode": "debug",
+  "difficulty": 2,
+  "skill_target": "debugging",
+  "learning_goal": "Sol mu, sağ mı? Yönü doğru seç",
+  "expected_behavior": "Yanlış yön komutunu bularak robotu doğru hedefe yönlendir",
+  "grid": {
+    "rows": 4,
+    "cols": 3,
+    "start": { "x": 0, "y": 0 },
+    "goal": { "x": 2, "y": 3 },
+    "obstacles": []
+  },
+  "solution": ["DOWN", "RIGHT", "DOWN", "RIGHT", "DOWN"],
+  "meta": {
+    "buggy_solution": ["DOWN", "LEFT", "DOWN", "RIGHT", "DOWN"],
+    "bug_index": 1
+  }
+}

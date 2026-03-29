@@ -1,0 +1,20 @@
+{
+  "id": "level-506",
+  "mode": "debug",
+  "difficulty": 3,
+  "skill_target": "debugging",
+  "learning_goal": "Engel içeren kodda hata bul",
+  "expected_behavior": "Dördüncü hamlede yanlış yön komutunu düzelt ve engeli aş",
+  "grid": {
+    "rows": 3,
+    "cols": 5,
+    "start": { "x": 0, "y": 0 },
+    "goal": { "x": 4, "y": 2 },
+    "obstacles": [{ "x": 2, "y": 1 }]
+  },
+  "solution": ["RIGHT", "DOWN", "DOWN", "RIGHT", "RIGHT", "RIGHT"],
+  "meta": {
+    "buggy_solution": ["RIGHT", "DOWN", "DOWN", "LEFT", "RIGHT", "RIGHT"],
+    "bug_index": 3
+  }
+}

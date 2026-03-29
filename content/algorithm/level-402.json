@@ -1,0 +1,20 @@
+{
+  "id": "level-402",
+  "mode": "function",
+  "difficulty": 1,
+  "skill_target": "functions",
+  "learning_goal": "İki farklı fonksiyon kullan",
+  "expected_behavior": "ILERI ve ASAGI fonksiyonlarını sırayla çağır",
+  "grid": {
+    "rows": 2,
+    "cols": 3,
+    "start": { "x": 0, "y": 0 },
+    "goal": { "x": 2, "y": 1 },
+    "obstacles": []
+  },
+  "solution": ["RIGHT", "RIGHT", "DOWN"],
+  "meta": {
+    "functions": { "ILERI": ["RIGHT"], "ASAGI": ["DOWN"] },
+    "hint": "ILERI ILERI ASAGI"
+  }
+}

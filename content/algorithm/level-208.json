@@ -1,0 +1,18 @@
+{
+  "id": "algorithm/level-208",
+  "mode": "loop",
+  "skill_target": "loops",
+  "difficulty": 3,
+  "learning_goal": "İki döngü",
+  "expected_behavior": "Önce sağ döngüsü, sonra aşağı döngüsü",
+  "grid": {
+    "rows": 4,
+    "cols": 6,
+    "start": { "x": 0, "y": 0 },
+    "goal": { "x": 5, "y": 3 }
+  },
+  "solution": [
+    { "type": "REPEAT", "count": 5, "body": ["RIGHT"] },
+    { "type": "REPEAT", "count": 3, "body": ["DOWN"] }
+  ]
+}

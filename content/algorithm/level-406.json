@@ -1,0 +1,20 @@
+{
+  "id": "level-406",
+  "mode": "function",
+  "difficulty": 3,
+  "skill_target": "functions",
+  "learning_goal": "SATIR fonksiyonu ile satır satır ilerle",
+  "expected_behavior": "SATIR fonksiyonunu 2 kez çağırarak hedefe ulaş",
+  "grid": {
+    "rows": 3,
+    "cols": 5,
+    "start": { "x": 0, "y": 0 },
+    "goal": { "x": 4, "y": 2 },
+    "obstacles": []
+  },
+  "solution": ["RIGHT", "RIGHT", "DOWN", "RIGHT", "RIGHT", "DOWN"],
+  "meta": {
+    "functions": { "SATIR": ["RIGHT", "RIGHT", "DOWN"] },
+    "hint": "SATIR'ı 2 kez çağır"
+  }
+}

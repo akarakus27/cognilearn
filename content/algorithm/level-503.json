@@ -1,0 +1,21 @@
+{
+  "id": "level-503",
+  "mode": "debug",
+  "difficulty": 2,
+  "skill_target": "debugging",
+  "learning_goal": "Gizli hatayı bul ve düzelt",
+  "expected_behavior": "İkinci hamlede saklı hatayı tespit et",
+  "grid": {
+    "rows": 3,
+    "cols": 3,
+    "start": { "x": 0, "y": 0 },
+    "goal": { "x": 2, "y": 2 },
+    "obstacles": []
+  },
+  "solution": ["RIGHT", "RIGHT", "DOWN", "DOWN"],
+  "meta": {
+    "buggy_solution": ["RIGHT", "DOWN", "DOWN", "DOWN"],
+    "bug_index": 1,
+    "hint": "İkinci hamleye dikkat"
+  }
+}

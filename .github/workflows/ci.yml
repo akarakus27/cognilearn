@@ -24,14 +24,39 @@ jobs:
       - name: Install
         run: pnpm install
 
+      # ── 1. Validate all content JSON files ────────────────────────────────
+      - name: Validate content JSON
+        run: |
+          python3 -c "
+          import json, glob, sys
+          bad = []
+          for f in glob.glob('content/**/*.json', recursive=True):
+              try:
+                  json.load(open(f, encoding='utf-8'))
+              except Exception as e:
+                  bad.append(f'{f}: {e}')
+          if bad:
+              print('Invalid JSON files:')
+              for b in bad: print(' ', b)
+              sys.exit(1)
+          print(f'All {len(list(glob.glob(\"content/**/*.json\", recursive=True)))} content files are valid JSON')
+          "
+
+      # ── 2. Package unit tests ──────────────────────────────────────────────
       - name: Test packages
         run: |
           pnpm test:engine
           pnpm test:utils
 
+      # ── 3. Web component tests (Jest + RTL + axe) ─────────────────────────
+      - name: Test web components
+        run: pnpm test:web
+
+      # ── 4. Build (type-check + production bundle) ──────────────────────────
       - name: Build web
         run: pnpm --filter web build
 
+      # ── 5. E2E happy-path smoke tests ─────────────────────────────────────
       - name: Install Playwright (Chromium)
         run: pnpm --filter web exec playwright install --with-deps chromium
 

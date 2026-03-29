@@ -1,0 +1,8 @@
+{
+  "github": {
+    "enabled": true,
+    "autoAlias": true,
+    "deploymentProtectionBypassSecret": false
+  },
+  "ignoreCommand": "git diff HEAD^ HEAD --name-only | grep -qvE '^(apps/web|content|packages)'"
+}

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { ProgressCodeForm } from "@/components/settings/ProgressCodeForm";
 
 export default function SettingsPage() {
   return (
@@ -64,7 +65,20 @@ export default function SettingsPage() {
           Tema seçimi, ilerleme yönetimi ve daha fazlası çok yakında burada olacak! ✨
         </p>
 
-        {/* Features coming */}
+        <div style={{
+          background: "white",
+          border: "2px solid #e2e8f0",
+          borderRadius: "1.25rem",
+          padding: "1.25rem",
+          marginBottom: "2rem",
+          textAlign: "left",
+        }}>
+          <div style={{ fontSize: 12, fontWeight: 800, color: "#94a3b8", marginBottom: "0.875rem", letterSpacing: 1 }}>
+            PROGRESS TOOLS
+          </div>
+          <ProgressCodeForm />
+        </div>
+
         <div style={{
           background: "white",
           border: "2px solid #e2e8f0",
@@ -78,7 +92,6 @@ export default function SettingsPage() {
           </div>
           {[
             { icon: "🌙", label: "Koyu / Açık tema" },
-            { icon: "📊", label: "İlerleme kodu dışa/içe aktar" },
             { icon: "🔔", label: "Günlük hatırlatıcılar" },
             { icon: "🌍", label: "Dil seçimi" },
           ].map((item) => (
@@ -92,7 +105,7 @@ export default function SettingsPage() {
               fontWeight: 600,
               color: "#475569",
             }}>
-              <span style={{ fontSize: 20 }}>{item.icon}</span>
+              <span aria-hidden="true" style={{ fontSize: 20 }}>{item.icon}</span>
               {item.label}
               <span style={{
                 marginLeft: "auto",
@@ -110,6 +123,7 @@ export default function SettingsPage() {
         {/* Back button */}
         <Link
           href="/"
+          aria-label="Return to home page"
           style={{
             display: "inline-flex",
             alignItems: "center",

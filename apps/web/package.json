@@ -8,6 +8,10 @@
     "prebuild": "node scripts/copy-content.mjs",
     "build": "next build",
     "start": "next start",
+    "test": "jest --watch",
+    "test:ci": "jest --ci --coverage --runInBand",
+    "test:a11y": "jest --runInBand __tests__/a11y",
+    "test:coverage": "jest --coverage",
     "pretest:e2e": "node scripts/copy-content.mjs",
     "test:e2e": "playwright test"
   },
@@ -21,12 +25,22 @@
     "zustand": "^4.4.0"
   },
   "devDependencies": {
+    "@axe-core/react": "^4.11.1",
     "@playwright/test": "^1.40.0",
     "@tailwindcss/postcss": "^4.2.2",
+    "@testing-library/jest-dom": "^6.9.1",
+    "@testing-library/react": "^16.3.2",
+    "@testing-library/user-event": "^14.6.1",
+    "@types/jest": "^30.0.0",
     "@types/node": "^20.0.0",
     "@types/react": "^18.2.0",
     "@types/react-dom": "^18.2.0",
     "autoprefixer": "^10.4.27",
+    "axe-core": "^4.11.1",
+    "babel-jest": "^30.3.0",
+    "jest": "^30.3.0",
+    "jest-axe": "^10.0.0",
+    "jest-environment-jsdom": "^30.3.0",
     "postcss": "^8.5.8",
     "tailwindcss": "^4.2.2",
     "typescript": "^5.0.0"

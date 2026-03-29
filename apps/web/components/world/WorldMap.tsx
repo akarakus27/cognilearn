@@ -310,9 +310,16 @@ export function WorldMap({ world, completedLevels, worldIdParam }: WorldMapProps
             <p style={{ color: "rgba(255,255,255,0.8)", margin: "0 0 1rem", fontSize: 14 }}>
               {world.description}
             </p>
-            <div style={{ display: "flex", alignItems: "center", gap: "0.75rem" }}>
-              <div style={{ flex: 1, height: 10, background: "rgba(255,255,255,0.25)", borderRadius: "9999px", overflow: "hidden" }}>
-                <div style={{
+          <div style={{ display: "flex", alignItems: "center", gap: "0.75rem" }}>
+            <div
+              role="progressbar"
+              aria-label="World completion progress"
+              aria-valuemin={0}
+              aria-valuemax={100}
+              aria-valuenow={progressPct}
+              style={{ flex: 1, height: 10, background: "rgba(255,255,255,0.25)", borderRadius: "9999px", overflow: "hidden" }}
+            >
+              <div style={{
                   height: "100%", width: `${progressPct}%`,
                   background: worldConfig.accent, borderRadius: "9999px",
                   transition: "width 0.7s ease",
@@ -391,7 +398,14 @@ export function WorldMap({ world, completedLevels, worldIdParam }: WorldMapProps
             {world.description}
           </p>
           <div style={{ display: "flex", alignItems: "center", gap: "0.75rem" }}>
-            <div style={{ flex: 1, height: 10, background: "rgba(255,255,255,0.25)", borderRadius: "9999px", overflow: "hidden" }}>
+            <div
+              role="progressbar"
+              aria-label="World completion progress"
+              aria-valuemin={0}
+              aria-valuemax={100}
+              aria-valuenow={progressPct}
+              style={{ flex: 1, height: 10, background: "rgba(255,255,255,0.25)", borderRadius: "9999px", overflow: "hidden" }}
+            >
               <div style={{
                 height: "100%", width: `${progressPct}%`,
                 background: worldConfig.accent, borderRadius: "9999px", transition: "width 0.7s ease",

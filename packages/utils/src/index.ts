@@ -4,5 +4,6 @@ export {
   saveProgress,
   recordCompletion,
   setLastPosition,
+  getStreak,
 } from "./progress";
 export { encodeProgress, decodeProgress } from "./progress-codec";

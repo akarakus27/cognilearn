@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect } from "react";
+import { playSound } from "@/lib/sound";
 
 interface FailFeedbackProps {
   onRetry: () => void;
@@ -8,6 +9,7 @@ interface FailFeedbackProps {
 
 export function FailFeedback({ onRetry }: FailFeedbackProps) {
   useEffect(() => {
+    playSound("fail");
     const onKey = (e: KeyboardEvent) => {
       if (e.key === "Enter") { e.preventDefault(); onRetry(); }
     };
@@ -17,6 +19,8 @@ export function FailFeedback({ onRetry }: FailFeedbackProps) {
 
   return (
     <div
+      role="alert"
+      aria-live="assertive"
       style={{
         fontFamily: "Nunito, system-ui, sans-serif",
         display: "flex",
@@ -87,6 +91,7 @@ export function FailFeedback({ onRetry }: FailFeedbackProps) {
       <button
         type="button"
         onClick={onRetry}
+        aria-label="Try the level again"
         style={{
           padding: "0.85rem 2.5rem",
           background: "linear-gradient(135deg, #f43f5e, #e11d48)",

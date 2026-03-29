@@ -5,8 +5,8 @@ export interface LevelSchema {
   difficulty: number;
   learning_goal: string;
   expected_behavior: string;
-  /** "step" = move one at a time (default), "sequence" = build queue then run, "chess-lesson" = chess theory, "chess-moves" = chess practice */
-  mode?: "step" | "sequence" | "chess-lesson" | "chess-moves" | "chess-simulate";
+  /** "step" = move one at a time (default), "sequence" = build queue then run, "loop" = build program with repeat blocks, "chess-lesson" = chess theory, "chess-moves" = chess practice */
+  mode?: "step" | "sequence" | "loop" | "conditional" | "function" | "debug" | "chess-lesson" | "chess-moves" | "chess-simulate";
   /** Grid config for algorithmic/unplugged puzzles */
   grid?: {
     rows: number;

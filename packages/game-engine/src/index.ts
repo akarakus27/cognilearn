@@ -1,8 +1,8 @@
 import type { LevelSchema } from "@cognitive/content-schema";
 import type { EngineState, Action } from "./types";
 import { createGridState } from "./grid";
-import { executeCommand } from "./command";
-import { validate as validateSolution } from "./validator";
+import { executeCommand, expandInstructions, simulateConditional } from "./command";
+import { validate as validateSolution, validateLoop, validateConditional } from "./validator";
 import { transition } from "./state-machine";
 
 const initialState: EngineState = {
@@ -81,6 +81,46 @@ export class Engine {
         }
         break;
 
+      case "RUN_LOOP":
+        if (this.state.phase === "play" && this.state.grid && this.state.level) {
+          const flat = expandInstructions(action.instructions);
+          for (const cmd of flat) {
+            const result = executeCommand(this.state.grid, cmd);
+            this.state.grid = result.grid;
+            this.state.commandHistory = [...this.state.commandHistory, cmd];
+            if (result.reachedGoal) break;
+          }
+          const validation = validateLoop(this.state.level, action.instructions);
+          this.state.phase = validation.valid
+            ? transition(this.state.phase, "SUBMIT_SUCCESS")
+            : transition(this.state.phase, "SUBMIT_FAIL");
+        }
+        break;
+
+      case "RUN_CONDITIONAL":
+        if (this.state.phase === "play" && this.state.grid && this.state.level) {
+          const { flatCommands } = simulateConditional(
+            action.instructions,
+            this.state.grid,
+            action.facing
+          );
+          for (const cmd of flatCommands) {
+            const result = executeCommand(this.state.grid, cmd);
+            this.state.grid = result.grid;
+            this.state.commandHistory = [...this.state.commandHistory, cmd];
+            if (result.reachedGoal) break;
+          }
+          const validation = validateConditional(
+            this.state.level,
+            action.instructions,
+            action.facing
+          );
+          this.state.phase = validation.valid
+            ? transition(this.state.phase, "SUBMIT_SUCCESS")
+            : transition(this.state.phase, "SUBMIT_FAIL");
+        }
+        break;
+
       case "RETRY":
         if (this.state.level && this.state.phase === "fail") {
           const grid = createGridState(this.state.level);
@@ -118,8 +158,8 @@ export class Engine {
 }
 
 export { createGridState, isValidCell, applyCommand } from "./grid";
-export { executeCommand, runSequence } from "./command";
-export { validate } from "./validator";
+export { executeCommand, runSequence, expandInstructions, countInstructions, simulateConditional } from "./command";
+export { validate, validateLoop, validateConditional } from "./validator";
 export { transition } from "./state-machine";
 export {
   computeStars,
@@ -134,4 +174,11 @@ export type {
   GridState,
   ValidationResult,
   LevelPhase,
+  RepeatBlock,
+  LoopInstruction,
+  IfBlock,
+  ConditionalInstruction,
+  Condition,
+  Direction,
+  RobotState,
 } from "./types";

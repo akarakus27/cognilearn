@@ -17,3 +17,7 @@ apps/web/public/content/
 test-results/
 playwright-report/
 playwright/.cache/
+
+# Internal strategy & roadmap docs
+docs/phase-*.md
+docs/PHASE-*.md

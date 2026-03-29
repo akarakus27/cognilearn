@@ -2,12 +2,13 @@
 
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import { loadProgress } from "@cognitive/utils";
+import { loadProgress, getStreak } from "@cognitive/utils";
 
 // ─── Types ────────────────────────────────────────────────────────────────────
 interface ProgressData {
   completedCount: number;
   totalXp: number;
+  streak: number;
 }
 
 // ─── Navbar ───────────────────────────────────────────────────────────────────
@@ -48,7 +49,7 @@ function Navbar() {
 }
 
 // ─── Gamification Bar ─────────────────────────────────────────────────────────
-function GamificationBar({ xp, completed }: { xp: number; completed: number }) {
+function GamificationBar({ xp, completed, streak }: { xp: number; completed: number; streak: number }) {
   const level = Math.floor(xp / 100) + 1;
   const levelXp = xp % 100;
   const titles = ["Beginner", "Explorer", "Adventurer", "Champion", "Legend"];
@@ -85,8 +86,8 @@ function GamificationBar({ xp, completed }: { xp: number; completed: number }) {
       <div className="flex items-center gap-1.5 bg-orange-50 px-3 py-1.5 rounded-xl">
         <span className="text-lg">🔥</span>
         <div>
-          <div className="font-800 text-orange-600 text-sm leading-none">5 days</div>
-          <div className="text-xs text-orange-400">streak</div>
+          <div className="font-800 text-orange-600 text-sm leading-none">{streak} gün</div>
+          <div className="text-xs text-orange-400">seri</div>
         </div>
       </div>
 
@@ -179,7 +180,7 @@ function WorldCards() {
       bg: "bg-violet-50",
       border: "border-violet-200",
       status: "active" as const,
-      levels: 15,
+      levels: 21,
     },
     {
       id: "3",
@@ -193,22 +194,55 @@ function WorldCards() {
       levels: 12,
     },
     {
-      id: "3",
-      name: "Chess Kingdom",
-      description: "Master the board, think ahead",
-      icon: "♟️",
-      color: "from-slate-400 to-slate-600",
-      bg: "bg-slate-50",
-      border: "border-slate-200",
-      status: "locked" as const,
-      levels: 0,
+      id: "4",
+      name: "Loop Land",
+      description: "Discover patterns and repeat them with loops!",
+      icon: "🔁",
+      color: "from-amber-400 to-orange-500",
+      bg: "bg-amber-50",
+      border: "border-amber-200",
+      status: "active" as const,
+      levels: 12,
+    },
+    {
+      id: "5",
+      name: "Akıllı Yollar",
+      description: "Koşulları öğren — robota karar verdirmeyi öğret!",
+      icon: "🤔",
+      color: "from-sky-400 to-cyan-500",
+      bg: "bg-sky-50",
+      border: "border-sky-200",
+      status: "active" as const,
+      levels: 10,
+    },
+    {
+      id: "6",
+      name: "Fonksiyon Fabrikası",
+      description: "Kendi komutlarını yarat ve tekrar kullan!",
+      icon: "🔧",
+      color: "from-violet-500 to-fuchsia-500",
+      bg: "bg-violet-50",
+      border: "border-violet-200",
+      status: "active" as const,
+      levels: 10,
+    },
+    {
+      id: "7",
+      name: "Hata Avcısı",
+      description: "Bozuk kodu bul ve düzelt — gerçek programcılar böyle çalışır!",
+      icon: "🐛",
+      color: "from-rose-500 to-red-600",
+      bg: "bg-rose-50",
+      border: "border-rose-200",
+      status: "active" as const,
+      levels: 8,
     },
   ];
 
   return (
     <div>
       <h2 className="text-xl font-black text-slate-700 mb-4">🗺️ Worlds</h2>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
         {worlds.map((world) => (
           <div key={world.id} className="relative group">
             {world.status === "locked" ? (
@@ -310,50 +344,86 @@ function ProgressDashboard({ completed, xp }: { completed: number; xp: number })
 }
 
 // ─── Achievements ─────────────────────────────────────────────────────────────
-function Achievements({ completed }: { completed: number }) {
+function Achievements({ completed, streak }: { completed: number; streak: number }) {
   const badges = [
     {
       id: "first",
       icon: "🗺️",
-      name: "First Explorer",
-      desc: "Complete your first level",
+      name: "İlk Kaşif",
+      desc: "İlk level'ı tamamla",
       color: "from-yellow-400 to-orange-500",
       bg: "bg-yellow-50 border-yellow-200",
       unlocked: completed >= 1,
     },
     {
-      id: "streak",
+      id: "streak3",
       icon: "🔥",
-      name: "5 Day Streak",
-      desc: "Play 5 days in a row",
+      name: "3 Günlük Seri",
+      desc: "3 gün üst üste oyna",
       color: "from-orange-400 to-red-500",
       bg: "bg-orange-50 border-orange-200",
-      unlocked: false,
+      unlocked: streak >= 3,
     },
     {
       id: "fast",
       icon: "⚡",
-      name: "Fast Learner",
-      desc: "Complete 3 levels in one day",
+      name: "Hızlı Öğrenci",
+      desc: "10 level tamamla",
       color: "from-blue-400 to-indigo-500",
       bg: "bg-blue-50 border-blue-200",
-      unlocked: completed >= 3,
+      unlocked: completed >= 10,
     },
     {
-      id: "master",
-      icon: "🏆",
-      name: "Algorithm Master",
-      desc: "Finish World 2",
-      color: "from-purple-400 to-pink-500",
+      id: "algo",
+      icon: "🧩",
+      name: "Algoritma Ustası",
+      desc: "21 sequence level bitir",
+      color: "from-violet-400 to-purple-500",
+      bg: "bg-violet-50 border-violet-200",
+      unlocked: completed >= 21,
+    },
+    {
+      id: "loop",
+      icon: "🔁",
+      name: "Döngü Ustası",
+      desc: "Loop Land'i bitir (12 level)",
+      color: "from-amber-400 to-orange-500",
+      bg: "bg-amber-50 border-amber-200",
+      unlocked: completed >= 33,
+    },
+    {
+      id: "cond",
+      icon: "🤔",
+      name: "Karar Verici",
+      desc: "Akıllı Yollar'ı bitir",
+      color: "from-sky-400 to-cyan-500",
+      bg: "bg-sky-50 border-sky-200",
+      unlocked: completed >= 43,
+    },
+    {
+      id: "func",
+      icon: "🔧",
+      name: "Fonksiyon Ustası",
+      desc: "Fonksiyon Fabrikası'nı bitir",
+      color: "from-violet-500 to-fuchsia-500",
       bg: "bg-purple-50 border-purple-200",
-      unlocked: false,
+      unlocked: completed >= 53,
+    },
+    {
+      id: "debug",
+      icon: "🐛",
+      name: "Hata Avcısı",
+      desc: "Tüm debug levelları tamamla",
+      color: "from-rose-500 to-red-600",
+      bg: "bg-rose-50 border-rose-200",
+      unlocked: completed >= 61,
     },
   ];
 
   return (
     <div>
       <h2 className="text-xl font-black text-slate-700 mb-4">🏅 Achievements</h2>
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3">
         {badges.map((badge) => (
           <div
             key={badge.id}
@@ -413,7 +483,8 @@ export default function HomePage() {
       (sum, stars) => sum + stars * 30,
       0
     );
-    setProgress({ completedCount, totalXp });
+    const streak = getStreak();
+    setProgress({ completedCount, totalXp, streak });
     setLoaded(true);
   }, []);
 
@@ -433,7 +504,7 @@ export default function HomePage() {
       <main className="relative max-w-5xl mx-auto px-4 pt-24 pb-12 space-y-6">
         {/* Gamification Bar */}
         {loaded && (
-          <GamificationBar xp={progress.totalXp} completed={progress.completedCount} />
+          <GamificationBar xp={progress.totalXp} completed={progress.completedCount} streak={progress.streak} />
         )}
 
         {/* Hero */}
@@ -466,7 +537,7 @@ export default function HomePage() {
         <WorldCards />
 
         {/* Achievements */}
-        {loaded && <Achievements completed={progress.completedCount} />}
+        {loaded && <Achievements completed={progress.completedCount} streak={progress.streak} />}
       </main>
     </div>
   );

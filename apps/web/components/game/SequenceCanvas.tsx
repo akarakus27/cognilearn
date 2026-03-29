@@ -6,6 +6,7 @@ import { computeReward } from "@cognitive/game-engine";
 import type { EngineState, GridCommand, Action } from "@cognitive/game-engine";
 import { SuccessFeedback } from "./SuccessFeedback";
 import { FailFeedback } from "./FailFeedback";
+import { playSound } from "@/lib/sound";
 
 const ARROW: Record<GridCommand, string> = {
   UP: "⬆️",
@@ -78,6 +79,7 @@ export function SequenceCanvas({
       }
       // If blocked, still wait so the user sees the pause
 
+      playSound("step");
       await new Promise<void>((r) => setTimeout(r, 380));
     }
 
@@ -231,7 +233,7 @@ export function SequenceCanvas({
             key={cmd}
             type="button"
             disabled={isPlaying}
-            onClick={() => setQueue((q) => [...q, cmd])}
+            onClick={() => { playSound("click"); setQueue((q) => [...q, cmd]); }}
             style={{
               width: 56, height: 56, fontSize: 24,
               background: isPlaying ? "#f1f5f9" : "white",

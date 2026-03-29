@@ -7,12 +7,25 @@ import { setLastPosition } from "@cognitive/utils";
 import { SuccessFeedback } from "./SuccessFeedback";
 import { FailFeedback } from "./FailFeedback";
 import { SequenceCanvas } from "./SequenceCanvas";
+import { LoopCanvas } from "./LoopCanvas";
+import { ConditionalCanvas } from "./ConditionalCanvas";
+import { FunctionCanvas } from "./FunctionCanvas";
+import { DebugCanvas } from "./DebugCanvas";
 
-function DPadBtn({ label, onClick }: { label: string; onClick: () => void }) {
+function DPadBtn({
+  label,
+  ariaLabel,
+  onClick,
+}: {
+  label: string;
+  ariaLabel: string;
+  onClick: () => void;
+}) {
   return (
     <button
       type="button"
       onClick={onClick}
+      aria-label={ariaLabel}
       style={{
         width: 52, height: 52,
         background: "white",
@@ -39,10 +52,11 @@ interface LevelCanvasProps {
   worldId: string;
   levelId: string;
   nextLevelHref: string | null;
+  onRetry?: () => void;
 }
 
 export function LevelCanvas(props: LevelCanvasProps) {
-  const { state, onAction, worldId, levelId, nextLevelHref } = props;
+  const { state, onAction, worldId, levelId, nextLevelHref, onRetry } = props;
   const { level, grid, phase, commandHistory } = state;
 
   if (!level) return <p>No level loaded</p>;
@@ -50,6 +64,54 @@ export function LevelCanvas(props: LevelCanvasProps) {
   if (level.mode === "sequence") {
     return (
       <SequenceCanvas
+        state={state}
+        onAction={onAction}
+        worldId={worldId}
+        levelId={levelId}
+        nextLevelHref={nextLevelHref}
+      />
+    );
+  }
+
+  if (level.mode === "loop") {
+    return (
+      <LoopCanvas
+        state={state}
+        onAction={onAction}
+        worldId={worldId}
+        levelId={levelId}
+        nextLevelHref={nextLevelHref}
+      />
+    );
+  }
+
+  if (level.mode === "conditional") {
+    return (
+      <ConditionalCanvas
+        state={state}
+        onAction={onAction}
+        worldId={worldId}
+        levelId={levelId}
+        nextLevelHref={nextLevelHref}
+      />
+    );
+  }
+
+  if (level.mode === "function") {
+    return (
+      <FunctionCanvas
+        state={state}
+        onAction={onAction}
+        worldId={worldId}
+        levelId={levelId}
+        nextLevelHref={nextLevelHref}
+      />
+    );
+  }
+
+  if (level.mode === "debug") {
+    return (
+      <DebugCanvas
         state={state}
         onAction={onAction}
         worldId={worldId}
@@ -120,6 +182,7 @@ export function LevelCanvas(props: LevelCanvasProps) {
             onAction({ type: "START_LEVEL" });
             setLastPosition(worldId, levelId);
           }}
+          aria-label={`Start level ${level.learning_goal}`}
           style={{
             padding: "0.75rem 2rem",
             background: "linear-gradient(135deg, #6366f1, #4f46e5)",
@@ -147,6 +210,7 @@ export function LevelCanvas(props: LevelCanvasProps) {
         xp={r.xp}
         nextLevelHref={nextLevelHref}
         worldHref={`/world/${worldId}`}
+        onRetry={onRetry}
       />
     );
   }
@@ -171,6 +235,8 @@ export function LevelCanvas(props: LevelCanvasProps) {
   return (
     <div style={{ padding: "0.5rem", maxWidth: "100%" }}>
       <div
+        role="grid"
+        aria-label={`${level.learning_goal} puzzle grid`}
         style={{
           display: "grid",
           gridTemplateColumns: `repeat(${grid.cols}, ${cellSize}px)`,
@@ -182,32 +248,39 @@ export function LevelCanvas(props: LevelCanvasProps) {
           margin: "0 auto",
         }}
       >
-        {Array.from({ length: grid.rows * grid.cols }, (_, i) => {
-          const x = i % grid.cols;
-          const y = Math.floor(i / grid.cols);
-          return (
-            <div
-              key={`${x}-${y}`}
-              style={{
-                width: cellSize,
-                height: cellSize,
-                background: isObstacle(x, y)
-                  ? "#666"
-                  : isGoal(x, y)
-                    ? "#22c55e"
-                    : "#f3f4f6",
-                border: "1px solid #e5e7eb",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                fontSize: Math.min(20, cellSize * 0.45),
-              }}
-            >
-              {isPlayer(x, y) ? "●" : null}
-              {isGoal(x, y) && !isPlayer(x, y) ? "★" : null}
-            </div>
-          );
-        })}
+        {Array.from({ length: grid.rows }, (_, y) => (
+          <div key={`row-${y}`} role="row" style={{ display: "contents" }}>
+            {Array.from({ length: grid.cols }, (_, x) => (
+              <div
+                key={`${x}-${y}`}
+                role="gridcell"
+                aria-label={[
+                  `Cell ${x + 1}, ${y + 1}`,
+                  isPlayer(x, y) ? "player" : null,
+                  isGoal(x, y) ? "goal" : null,
+                  isObstacle(x, y) ? "obstacle" : null,
+                ].filter(Boolean).join(", ")}
+                style={{
+                  width: cellSize,
+                  height: cellSize,
+                  background: isObstacle(x, y)
+                    ? "#666"
+                    : isGoal(x, y)
+                      ? "#22c55e"
+                      : "#f3f4f6",
+                  border: "1px solid #e5e7eb",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  fontSize: Math.min(20, cellSize * 0.45),
+                }}
+              >
+                {isPlayer(x, y) ? "●" : null}
+                {isGoal(x, y) && !isPlayer(x, y) ? "★" : null}
+              </div>
+            ))}
+          </div>
+        ))}
       </div>
       {phase === "play" && (
         <div style={{ marginTop: "1.25rem", display: "flex", flexDirection: "column", alignItems: "center", gap: "0.5rem" }}>
@@ -215,27 +288,28 @@ export function LevelCanvas(props: LevelCanvasProps) {
           <div style={{ display: "grid", gridTemplateColumns: "52px 52px 52px", gap: "0.35rem" }}>
             {/* Row 1: empty, UP, empty */}
             <div />
-            <DPadBtn label="⬆️" onClick={() => onAction({ type: "EXECUTE_COMMAND", command: "UP" })} />
+            <DPadBtn label="⬆️" ariaLabel="Move up" onClick={() => onAction({ type: "EXECUTE_COMMAND", command: "UP" })} />
             <div />
             {/* Row 2: LEFT, center dot, RIGHT */}
-            <DPadBtn label="⬅️" onClick={() => onAction({ type: "EXECUTE_COMMAND", command: "LEFT" })} />
-            <div style={{ width: 52, height: 52, borderRadius: "50%", background: "#e2e8f0", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 18 }}>●</div>
-            <DPadBtn label="➡️" onClick={() => onAction({ type: "EXECUTE_COMMAND", command: "RIGHT" })} />
+            <DPadBtn label="⬅️" ariaLabel="Move left" onClick={() => onAction({ type: "EXECUTE_COMMAND", command: "LEFT" })} />
+            <div aria-hidden="true" style={{ width: 52, height: 52, borderRadius: "50%", background: "#e2e8f0", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 18 }}>●</div>
+            <DPadBtn label="➡️" ariaLabel="Move right" onClick={() => onAction({ type: "EXECUTE_COMMAND", command: "RIGHT" })} />
             {/* Row 3: empty, DOWN, empty */}
             <div />
-            <DPadBtn label="⬇️" onClick={() => onAction({ type: "EXECUTE_COMMAND", command: "DOWN" })} />
+            <DPadBtn label="⬇️" ariaLabel="Move down" onClick={() => onAction({ type: "EXECUTE_COMMAND", command: "DOWN" })} />
             <div />
           </div>
           <button
             type="button"
             onClick={() => onAction({ type: "RESET_PLAY" })}
+            aria-label="Reset current level attempt"
             style={{ marginTop: "0.5rem", padding: "0.5rem 1.25rem", background: "#f1f5f9", border: "1.5px solid #e2e8f0", borderRadius: "0.75rem", cursor: "pointer", fontWeight: 700, fontSize: 13, color: "#64748b" }}
           >
             🔄 Sıfırla
           </button>
         </div>
       )}
-      <p style={{ marginTop: "0.5rem", fontSize: 14, color: "#666", textAlign: "center" }}>
+      <p aria-live="polite" style={{ marginTop: "0.5rem", fontSize: 14, color: "#666", textAlign: "center" }}>
         Hamle: {commandHistory.length}
       </p>
       <div style={{ marginTop: "0.75rem", textAlign: "center" }}>

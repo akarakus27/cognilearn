@@ -1,15 +1,21 @@
 import type { LevelSchema } from "@cognitive/content-schema";
-import type { GridCommand } from "./types";
+import type { GridCommand, LoopInstruction } from "./types";
 
 export interface RewardResult {
   stars: 1 | 2 | 3;
   xp: number;
 }
 
-/** Optimal move count from level solution */
+/** Optimal move count from level solution (flat commands or loop instructions) */
 function optimalMoves(level: LevelSchema): number {
-  const sol = level.solution as GridCommand[] | undefined;
-  return Array.isArray(sol) ? sol.length : 1;
+  const sol = level.solution as GridCommand[] | LoopInstruction[] | undefined;
+  if (!Array.isArray(sol)) return 1;
+  // If it's a loop solution, count top-level blocks
+  const first = sol[0];
+  if (first && typeof first === "object" && "type" in first) {
+    return (sol as LoopInstruction[]).length;
+  }
+  return (sol as GridCommand[]).length;
 }
 
 /**

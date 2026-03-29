@@ -43,15 +43,19 @@ export function ProgressCodeForm() {
   };
 
   return (
-    <div style={{ display: "flex", flexDirection: "column", gap: "1rem" }}>
+    <section
+      aria-labelledby="progress-code-title"
+      style={{ display: "flex", flexDirection: "column", gap: "1rem" }}
+    >
       <div>
-        <h2 style={{ fontSize: "1.1rem", marginBottom: "0.5rem" }}>Export</h2>
+        <h2 id="progress-code-title" style={{ fontSize: "1.1rem", marginBottom: "0.5rem" }}>Export</h2>
         <p style={{ color: "#666", fontSize: 14, marginBottom: "0.5rem" }}>
           Copy your progress code to back up or move to another device.
         </p>
         <button
           type="button"
           onClick={handleExport}
+          aria-label="Copy progress code to clipboard"
           style={{
             padding: "0.5rem 1rem",
             background: "#2563eb",
@@ -60,6 +64,7 @@ export function ProgressCodeForm() {
             borderRadius: "0.5rem",
             cursor: "pointer",
             fontWeight: 600,
+            minHeight: 44,
           }}
         >
           Copy progress code
@@ -70,7 +75,15 @@ export function ProgressCodeForm() {
         <p style={{ color: "#666", fontSize: 14, marginBottom: "0.5rem" }}>
           Paste a code here. Progress is merged with what you already have.
         </p>
+        <label
+          htmlFor="progress-import-code"
+          style={{ display: "block", fontSize: 13, fontWeight: 600, color: "#334155", marginBottom: "0.35rem" }}
+        >
+          Progress code
+        </label>
         <textarea
+          id="progress-import-code"
+          aria-describedby="progress-import-help"
           value={importText}
           onChange={(e) => setImportText(e.target.value)}
           rows={4}
@@ -85,9 +98,13 @@ export function ProgressCodeForm() {
           }}
           placeholder="Paste progress code…"
         />
+        <p id="progress-import-help" style={{ color: "#64748b", fontSize: 12, marginTop: "0.35rem" }}>
+          Paste an exported backup code from another device.
+        </p>
         <button
           type="button"
           onClick={handleImport}
+          aria-label="Import progress code"
           style={{
             marginTop: "0.5rem",
             padding: "0.5rem 1rem",
@@ -97,12 +114,23 @@ export function ProgressCodeForm() {
             borderRadius: "0.5rem",
             cursor: "pointer",
             fontWeight: 600,
+            minHeight: 44,
           }}
         >
           Import
         </button>
       </div>
-      {message && <p style={{ color: "#15803d", fontSize: 14 }}>{message}</p>}
-    </div>
+      {message && (
+        <p
+          role={message.toLowerCase().includes("fail") || message.toLowerCase().includes("invalid") ? "alert" : "status"}
+          aria-live="polite"
+          style={{ color: "#15803d", fontSize: 14 }}
+        >
+          {message}
+        </p>
+      )}
+    </section>
   );
 }
+
+export default ProgressCodeForm;

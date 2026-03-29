@@ -19,7 +19,21 @@
       "Bash(cat \"/c/Users/Abdul/Desktop/Yeni klasör \\(2\\)/content/algorithm/level-002.json\")",
       "Bash(cat \"/c/Users/Abdul/Desktop/Yeni klasör \\(2\\)/packages/game-engine/src/command.ts\")",
       "Bash(cat \"/c/Users/Abdul/Desktop/Yeni klasör \\(2\\)/apps/web/next.config.js\")",
-      "Bash(ls \"/c/Users/Abdul/Desktop/Yeni klasör \\(2\\)/apps/web/node_modules/tailwindcss\")"
+      "Bash(ls \"/c/Users/Abdul/Desktop/Yeni klasör \\(2\\)/apps/web/node_modules/tailwindcss\")",
+      "Bash(ls \"c:/Users/Abdul/Desktop/Yeni klasör \\(2\\)/CogniLearn/apps/web/public/content/algorithm/\")",
+      "Bash(ls \"c:/Users/Abdul/Desktop/Yeni klasör \\(2\\)/CogniLearn/apps/web/public/content/worlds/\")",
+      "Bash(find \"c:/Users/Abdul/Desktop/Yeni klasör \\(2\\)/CogniLearn/apps/web\" -maxdepth 2 -type f -name \"jest.config*\")",
+      "Bash(find \"c:/Users/Abdul/Desktop/Yeni klasör \\(2\\)/CogniLearn/apps/web\" -type d -name \"__tests__\")",
+      "Bash(ls -la 'c:/Users/Abdul/Desktop/Yeni klasör \\(2\\)/CogniLearn/apps/web/')",
+      "Bash(npx jest:*)",
+      "Bash(powershell -Command \"\\(Get-Content jest.config.ts\\) -replace ''setupFilesAfterFramework'', ''setupFilesAfterFramework'' | Set-Content jest.config.ts\")",
+      "Bash(cat \"c:/Users/Abdul/Desktop/Yeni klasör \\(2\\)/CogniLearn/apps/web/jest.config.ts\")",
+      "Bash(find 'c:/Users/Abdul/Desktop/Yeni klasör \\(2\\)/CogniLearn/apps/web/node_modules/jest-config' -name *.js)",
+      "Bash(find 'c:/Users/Abdul/Desktop/Yeni klasör \\(2\\)/CogniLearn/node_modules/.pnpm/jest-config@30.3.0_@types+node@20.19.37' -name *.js)",
+      "Bash(xargs grep:*)",
+      "Bash(node -e \":*)",
+      "Bash(cat 'c:/Users/Abdul/Desktop/Yeni klasör \\(2\\)/CogniLearn/.gitignore')",
+      "Bash(cat 'c:/Users/Abdul/Desktop/Yeni klasör \\(2\\)/CogniLearn/README.md')"
     ]
   }
 }

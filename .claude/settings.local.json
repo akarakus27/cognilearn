@@ -37,7 +37,15 @@
       "Bash(pnpm --filter web build)",
       "Bash(pnpm add:*)",
       "Bash(cat \"c:/Users/Abdul/Desktop/Yeni klasör \\(2\\)/CogniLearn/content/algorithm/level-104.json\")",
-      "Bash(cat \"c:/Users/Abdul/Desktop/Yeni klasör \\(2\\)/CogniLearn/content/algorithm/level-106.json\")"
+      "Bash(cat \"c:/Users/Abdul/Desktop/Yeni klasör \\(2\\)/CogniLearn/content/algorithm/level-106.json\")",
+      "Bash(ls \"c:/Users/Abdul/Desktop/Yeni klasör \\(2\\)/CogniLearn/content/worlds/\")",
+      "Bash(ls \"c:/Users/Abdul/Desktop/Yeni klasör \\(2\\)/CogniLearn/content/algorithm/\")",
+      "Bash(head -5 echo \"---\" ls \"c:/Users/Abdul/Desktop/Yeni klasör \\(2\\)/CogniLearn/apps/web/public/content/algorithm/\")",
+      "Bash(cp apps/web/public/content/algorithm/level-2*.json content/algorithm/)",
+      "Bash(cp apps/web/public/content/algorithm/level-3*.json content/algorithm/)",
+      "Bash(cp apps/web/public/content/algorithm/level-4*.json content/algorithm/)",
+      "Bash(cp apps/web/public/content/algorithm/level-5*.json content/algorithm/)",
+      "Bash(cp apps/web/public/content/algorithm/level-11*.json content/algorithm/)"
     ]
   }
 }

@@ -11,13 +11,14 @@ import {
 
 export function ProgressCodeForm() {
   const [importText, setImportText] = useState("");
-  const [message, setMessage] = useState<string | null>(null);
+  const [message, setMessage] = useState<{ text: string; ok: boolean } | null>(null);
 
   const handleExport = () => {
     const p = loadProgress();
     const code = encodeProgress(p);
     void navigator.clipboard.writeText(code).then(() => {
-      setMessage("Copied to clipboard.");
+      setMessage({ text: "✓ Panoya kopyalandı!", ok: true });
+      setTimeout(() => setMessage(null), 3000);
     });
   };
 
@@ -25,109 +26,129 @@ export function ProgressCodeForm() {
     setMessage(null);
     try {
       const decoded = decodeProgress(importText.trim());
+      const current = loadProgress();
       const merged: Progress = {
-        completedLevels: {
-          ...loadProgress().completedLevels,
-          ...decoded.completedLevels,
-        },
-        xp: Math.max(loadProgress().xp ?? 0, decoded.xp ?? 0),
-        lastLevelId: decoded.lastLevelId ?? loadProgress().lastLevelId,
-        lastWorldId: decoded.lastWorldId ?? loadProgress().lastWorldId,
+        completedLevels: { ...current.completedLevels, ...decoded.completedLevels },
+        xp: Math.max(current.xp ?? 0, decoded.xp ?? 0),
+        lastLevelId: decoded.lastLevelId ?? current.lastLevelId,
+        lastWorldId: decoded.lastWorldId ?? current.lastWorldId,
       };
       saveProgress(merged);
-      setMessage("Progress imported.");
+      setMessage({ text: "✓ İlerleme başarıyla aktarıldı!", ok: true });
       setImportText("");
     } catch (e) {
-      setMessage(e instanceof Error ? e.message : "Import failed");
+      setMessage({ text: e instanceof Error ? e.message : "Geçersiz kod", ok: false });
     }
   };
 
+  const inputStyle: React.CSSProperties = {
+    width: "100%", boxSizing: "border-box",
+    padding: "0.65rem 0.875rem",
+    background: "rgba(255,255,255,0.06)",
+    border: "1.5px solid rgba(255,255,255,0.12)",
+    borderRadius: "0.75rem",
+    color: "white",
+    fontFamily: "monospace", fontSize: 13,
+    outline: "none",
+    resize: "vertical",
+  };
+
   return (
-    <section
-      aria-labelledby="progress-code-title"
-      style={{ display: "flex", flexDirection: "column", gap: "1rem" }}
-    >
+    <section aria-labelledby="progress-code-title" style={{ display: "flex", flexDirection: "column", gap: "1.5rem" }}>
+
+      {/* Export */}
       <div>
-        <h2 id="progress-code-title" style={{ fontSize: "1.1rem", marginBottom: "0.5rem" }}>Export</h2>
-        <p style={{ color: "#666", fontSize: 14, marginBottom: "0.5rem" }}>
-          Copy your progress code to back up or move to another device.
+        <h2 id="progress-code-title" style={{ fontSize: 15, fontWeight: 800, color: "white", marginBottom: "0.35rem" }}>
+          📤 Dışa Aktar
+        </h2>
+        <p style={{ color: "rgba(255,255,255,0.45)", fontSize: 13, marginBottom: "0.875rem", lineHeight: 1.6 }}>
+          İlerleme kodunu kopyala — başka cihazda devam etmek için kullan.
         </p>
         <button
           type="button"
           onClick={handleExport}
           aria-label="Copy progress code to clipboard"
           style={{
-            padding: "0.5rem 1rem",
-            background: "#2563eb",
-            color: "white",
-            border: "none",
-            borderRadius: "0.5rem",
-            cursor: "pointer",
-            fontWeight: 600,
-            minHeight: 44,
+            padding: "0.7rem 1.5rem",
+            background: "linear-gradient(135deg, #7c3aed, #4f46e5)",
+            color: "white", border: "none", borderRadius: "0.875rem",
+            cursor: "pointer", fontWeight: 800, fontSize: 14,
+            minHeight: 44, boxShadow: "0 4px 14px rgba(124,58,237,0.4)",
+            width: "100%",
           }}
         >
-          Copy progress code
+          📋 İlerleme Kodunu Kopyala
         </button>
       </div>
+
+      {/* Divider */}
+      <div style={{ height: 1, background: "rgba(255,255,255,0.08)" }} />
+
+      {/* Import */}
       <div>
-        <h2 style={{ fontSize: "1.1rem", marginBottom: "0.5rem" }}>Import</h2>
-        <p style={{ color: "#666", fontSize: 14, marginBottom: "0.5rem" }}>
-          Paste a code here. Progress is merged with what you already have.
+        <h2 style={{ fontSize: 15, fontWeight: 800, color: "white", marginBottom: "0.35rem" }}>
+          📥 İçe Aktar
+        </h2>
+        <p style={{ color: "rgba(255,255,255,0.45)", fontSize: 13, marginBottom: "0.875rem", lineHeight: 1.6 }}>
+          Başka cihazdan kodu yapıştır — ilerleme mevcut veriyle birleştirilir.
         </p>
         <label
           htmlFor="progress-import-code"
-          style={{ display: "block", fontSize: 13, fontWeight: 600, color: "#334155", marginBottom: "0.35rem" }}
+          style={{ display: "block", fontSize: 12, fontWeight: 700, color: "rgba(255,255,255,0.5)", marginBottom: "0.4rem", letterSpacing: 0.5 }}
         >
-          Progress code
+          İLERLEME KODU
         </label>
         <textarea
           id="progress-import-code"
+          aria-label="Progress code"
           aria-describedby="progress-import-help"
           value={importText}
           onChange={(e) => setImportText(e.target.value)}
-          rows={4}
-          style={{
-            width: "100%",
-            maxWidth: "100%",
-            padding: "0.5rem",
-            fontFamily: "monospace",
-            fontSize: 13,
-            borderRadius: "0.375rem",
-            border: "1px solid #d1d5db",
-          }}
-          placeholder="Paste progress code…"
+          rows={3}
+          style={inputStyle}
+          placeholder="Kodu buraya yapıştır..."
         />
-        <p id="progress-import-help" style={{ color: "#64748b", fontSize: 12, marginTop: "0.35rem" }}>
-          Paste an exported backup code from another device.
+        <p id="progress-import-help" style={{ color: "rgba(255,255,255,0.3)", fontSize: 12, marginTop: "0.35rem", marginBottom: "0.875rem" }}>
+          Başka bir cihazdan dışa aktarılan kodu yapıştır.
         </p>
         <button
           type="button"
           onClick={handleImport}
+          disabled={!importText.trim()}
           aria-label="Import progress code"
           style={{
-            marginTop: "0.5rem",
-            padding: "0.5rem 1rem",
-            background: "#111827",
-            color: "white",
-            border: "none",
-            borderRadius: "0.5rem",
-            cursor: "pointer",
-            fontWeight: 600,
-            minHeight: 44,
+            padding: "0.7rem 1.5rem",
+            background: importText.trim()
+              ? "linear-gradient(135deg, #059669, #047857)"
+              : "rgba(255,255,255,0.07)",
+            color: importText.trim() ? "white" : "rgba(255,255,255,0.3)",
+            border: "none", borderRadius: "0.875rem",
+            cursor: importText.trim() ? "pointer" : "not-allowed",
+            fontWeight: 800, fontSize: 14, minHeight: 44,
+            width: "100%",
+            transition: "all 0.2s",
           }}
         >
-          Import
+          ✓ Aktarımı Uygula
         </button>
       </div>
+
+      {/* Message */}
       {message && (
-        <p
-          role={message.toLowerCase().includes("fail") || message.toLowerCase().includes("invalid") ? "alert" : "status"}
+        <div
+          role={message.ok ? "status" : "alert"}
           aria-live="polite"
-          style={{ color: "#15803d", fontSize: 14 }}
+          style={{
+            padding: "0.75rem 1rem",
+            background: message.ok ? "rgba(5,150,105,0.15)" : "rgba(239,68,68,0.15)",
+            border: `1px solid ${message.ok ? "rgba(5,150,105,0.4)" : "rgba(239,68,68,0.4)"}`,
+            borderRadius: "0.75rem",
+            color: message.ok ? "#6ee7b7" : "#fca5a5",
+            fontSize: 13, fontWeight: 700, textAlign: "center",
+          }}
         >
-          {message}
-        </p>
+          {message.text}
+        </div>
       )}
     </section>
   );

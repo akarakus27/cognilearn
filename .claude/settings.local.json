@@ -45,7 +45,11 @@
       "Bash(cp apps/web/public/content/algorithm/level-3*.json content/algorithm/)",
       "Bash(cp apps/web/public/content/algorithm/level-4*.json content/algorithm/)",
       "Bash(cp apps/web/public/content/algorithm/level-5*.json content/algorithm/)",
-      "Bash(cp apps/web/public/content/algorithm/level-11*.json content/algorithm/)"
+      "Bash(cp apps/web/public/content/algorithm/level-11*.json content/algorithm/)",
+      "Bash(python3 -c \"import sys,json; json.load\\(sys.stdin\\); print\\(''''valid''''\\)\")",
+      "Bash(sed -i 's/\\\\\\\\!/!/g' content/algorithm/level-104.json)",
+      "Bash(sed -i 's/\\\\\\\\!/!/g' apps/web/public/content/algorithm/level-104.json)",
+      "Bash(python3 -c \"import json; json.load\\(open\\(''content/algorithm/level-104.json''\\)\\); print\\(''valid''\\)\")"
     ]
   }
 }

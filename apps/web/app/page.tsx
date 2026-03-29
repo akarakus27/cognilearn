@@ -159,7 +159,7 @@ function HeroSection() {
 
 // ─── World Cards ──────────────────────────────────────────────────────────────
 function WorldCards() {
-  const worlds = [
+  const worlds: Array<{ id: string; name: string; description: string; icon: string; color: string; bg: string; border: string; status: "active" | "locked"; levels: number }> = [
     {
       id: "1",
       name: "First Steps",
@@ -168,7 +168,7 @@ function WorldCards() {
       color: "from-emerald-400 to-teal-500",
       bg: "bg-emerald-50",
       border: "border-emerald-200",
-      status: "active" as const,
+      status: "active",
       levels: 4,
     },
     {
@@ -179,7 +179,7 @@ function WorldCards() {
       color: "from-violet-500 to-purple-600",
       bg: "bg-violet-50",
       border: "border-violet-200",
-      status: "active" as const,
+      status: "active",
       levels: 21,
     },
     {
@@ -190,7 +190,7 @@ function WorldCards() {
       color: "from-pink-500 to-purple-600",
       bg: "bg-pink-50",
       border: "border-pink-200",
-      status: "active" as const,
+      status: "active",
       levels: 12,
     },
     {
@@ -201,7 +201,7 @@ function WorldCards() {
       color: "from-amber-400 to-orange-500",
       bg: "bg-amber-50",
       border: "border-amber-200",
-      status: "active" as const,
+      status: "active",
       levels: 12,
     },
     {
@@ -212,7 +212,7 @@ function WorldCards() {
       color: "from-sky-400 to-cyan-500",
       bg: "bg-sky-50",
       border: "border-sky-200",
-      status: "active" as const,
+      status: "active",
       levels: 10,
     },
     {
@@ -223,7 +223,7 @@ function WorldCards() {
       color: "from-violet-500 to-fuchsia-500",
       bg: "bg-violet-50",
       border: "border-violet-200",
-      status: "active" as const,
+      status: "active",
       levels: 10,
     },
     {
@@ -234,7 +234,7 @@ function WorldCards() {
       color: "from-rose-500 to-red-600",
       bg: "bg-rose-50",
       border: "border-rose-200",
-      status: "active" as const,
+      status: "active",
       levels: 8,
     },
   ];
@@ -473,7 +473,7 @@ function EmptyState() {
 
 // ─── Page ─────────────────────────────────────────────────────────────────────
 export default function HomePage() {
-  const [progress, setProgress] = useState<ProgressData>({ completedCount: 0, totalXp: 0 });
+  const [progress, setProgress] = useState<ProgressData>({ completedCount: 0, totalXp: 0, streak: 0 });
   const [loaded, setLoaded] = useState(false);
 
   useEffect(() => {

@@ -33,7 +33,9 @@
       "Bash(xargs grep:*)",
       "Bash(node -e \":*)",
       "Bash(cat 'c:/Users/Abdul/Desktop/Yeni klasör \\(2\\)/CogniLearn/.gitignore')",
-      "Bash(cat 'c:/Users/Abdul/Desktop/Yeni klasör \\(2\\)/CogniLearn/README.md')"
+      "Bash(cat 'c:/Users/Abdul/Desktop/Yeni klasör \\(2\\)/CogniLearn/README.md')",
+      "Bash(pnpm --filter web build)",
+      "Bash(pnpm add:*)"
     ]
   }
 }

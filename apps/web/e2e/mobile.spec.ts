@@ -1,8 +1,9 @@
 import { test, expect, devices } from "@playwright/test";
 
-test.describe("mobile responsiveness", () => {
-  test.use({ ...devices["iPhone SE"] });
+// test.use() must be top-level, not inside describe
+test.use({ ...devices["iPhone SE"] });
 
+test.describe("mobile responsiveness", () => {
   test("home page actions remain visible on small screens", async ({ page }) => {
     await page.goto("/");
 

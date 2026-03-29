@@ -17,7 +17,22 @@
     "algorithm/level-109",
     "algorithm/level-110",
     "algorithm/level-111",
-    "algorithm/level-112"
+    "algorithm/level-112",
+    "algorithm/level-119",
+    "algorithm/level-120",
+    "algorithm/level-121",
+    "algorithm/level-122",
+    "algorithm/level-123",
+    "algorithm/level-124",
+    "algorithm/level-125",
+    "algorithm/level-126",
+    "algorithm/level-127",
+    "algorithm/level-128",
+    "algorithm/level-129",
+    "algorithm/level-130",
+    "algorithm/level-131",
+    "algorithm/level-132",
+    "algorithm/level-133"
   ],
   "levelTitles": {
     "algorithm/level-002": "Plan & Run",
@@ -34,7 +49,22 @@
     "algorithm/level-109": "Island Hopping",
     "algorithm/level-110": "The Long Way",
     "algorithm/level-111": "Big Maze",
-    "algorithm/level-112": "Algorithm Master! 🏆"
+    "algorithm/level-112": "Algorithm Master!",
+    "algorithm/level-119": "Zigzag",
+    "algorithm/level-120": "Double Wall",
+    "algorithm/level-121": "Bottleneck",
+    "algorithm/level-122": "Staircase",
+    "algorithm/level-123": "Around the Island",
+    "algorithm/level-124": "The L-Block",
+    "algorithm/level-125": "The Long Wall",
+    "algorithm/level-126": "Crossroads",
+    "algorithm/level-127": "Three Walls",
+    "algorithm/level-128": "The Maze",
+    "algorithm/level-129": "The Gauntlet",
+    "algorithm/level-130": "The Big Switch",
+    "algorithm/level-131": "Labyrinth II",
+    "algorithm/level-132": "The Serpent",
+    "algorithm/level-133": "Grand Finale"
   },
   "order": 2
 }
